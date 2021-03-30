@@ -32,6 +32,8 @@ public class LabyrinthLoader : MonoBehaviour
             {
                 cells[r, c] = new MazeCell();
                 Vector3 spawnPosition = new Vector3(r * gridSpacingOffset, 0, c * gridSpacingOffset) + Vector3.zero;
+                cells[r, c].cellRow = r;
+                cells[r, c].cellCol = c;
                 cells[r, c].body = Instantiate(cell, spawnPosition, Quaternion.identity);
             }
         }

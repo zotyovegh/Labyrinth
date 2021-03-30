@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MazeAlgorithm : MonoBehaviour
+public abstract class MazeAlgorithm
 {
-    // Start is called before the first frame update
-    void Start()
+    protected MazeCell[,] cells;
+    protected int mazeRows, mazeCols;
+   
+    protected MazeAlgorithm(MazeCell[,] cells): base()
     {
-        
+        this.cells = cells;
+        mazeRows = cells.GetLength(0);
+        mazeCols = cells.GetLength(1);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public abstract void CreateLabyrinth();
 }
