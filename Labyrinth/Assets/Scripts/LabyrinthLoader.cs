@@ -9,13 +9,12 @@ public class LabyrinthLoader : MonoBehaviour
     public float size = 2f;
     public float gridSpacingOffset = 1f;
 
-    private MazeCell[,] cells;
-
     // Start is called before the first frame update
     void Start()
     {
-        cells = new MazeCell[mazeRows, mazeCols];
-        InitializeMaze();
+        Debug.Log("test");
+        MazeCell[,] cells = new MazeCell[mazeRows, mazeCols];
+        InitializeMaze(cells);
 
         MazeAlgorithm ma = new PrimsAlgorithm(cells);
         ma.CreateLabyrinth();
@@ -27,7 +26,7 @@ public class LabyrinthLoader : MonoBehaviour
         
     }
 
-    private void InitializeMaze()
+    private void InitializeMaze(MazeCell[,] cells)
     {
         for(int r = 0; r < mazeRows; r++)
         {

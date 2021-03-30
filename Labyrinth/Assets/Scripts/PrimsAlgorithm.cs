@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = System.Random;
 
 public class PrimsAlgorithm : MazeAlgorithm
 {
@@ -57,8 +56,8 @@ public class PrimsAlgorithm : MazeAlgorithm
 
     MazeCell[] takeRandomPair(List<MazeCell[]> wallPairs)
     {
-        var rand = new Random();
-        int position = rand.Next(0, wallPairs.Count);
+        int position = UnityEngine.Random.Range(0, wallPairs.Count);
+        Debug.Log(wallPairs.Count + " " + position);
         MazeCell[] pair = wallPairs[position];
         wallPairs.RemoveAt(position);
         return pair;
