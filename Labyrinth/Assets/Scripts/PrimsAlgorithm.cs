@@ -57,7 +57,6 @@ public class PrimsAlgorithm : MazeAlgorithm
     MazeCell[] takeRandomPair(List<MazeCell[]> wallPairs)
     {
         int position = UnityEngine.Random.Range(0, wallPairs.Count);
-        Debug.Log(wallPairs.Count + " " + position);
         MazeCell[] pair = wallPairs[position];
         wallPairs.RemoveAt(position);
         return pair;
