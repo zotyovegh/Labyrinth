@@ -8,5 +8,6 @@ public class MazeCell
     public bool isWall = true;
     public MazeCell[] neighbors = null;
     public GameObject body;
+    public GameObject floor;
     public int cellRow, cellCol;
 }
