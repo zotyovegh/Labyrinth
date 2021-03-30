@@ -14,7 +14,11 @@ public class LabyrinthLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cells = new MazeCell[mazeRows, mazeCols];
         InitializeMaze();
+
+        MazeAlgorithm ma = new PrimsAlgorithm(cells);
+        ma.CreateLabyrinth();
     }
 
     // Update is called once per frame
@@ -25,7 +29,6 @@ public class LabyrinthLoader : MonoBehaviour
 
     private void InitializeMaze()
     {
-        cells = new MazeCell[mazeRows, mazeCols];
         for(int r = 0; r < mazeRows; r++)
         {
             for (int c = 0; c < mazeCols; c++)

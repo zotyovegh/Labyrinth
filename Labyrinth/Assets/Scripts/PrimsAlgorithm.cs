@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using Random = System.Random;
 
 public class PrimsAlgorithm : MazeAlgorithm
@@ -17,6 +20,8 @@ public class PrimsAlgorithm : MazeAlgorithm
             }
             currentPair[0].isWall = false;
             currentPair[1].isWall = false;
+            if (currentPair[0].body != null) GameObject.Destroy(currentPair[0].body);
+            if (currentPair[1].body != null) GameObject.Destroy(currentPair[1].body);
             getNeighboringWalls(currentPair[1], cells, wallPairs);
         }
     }
