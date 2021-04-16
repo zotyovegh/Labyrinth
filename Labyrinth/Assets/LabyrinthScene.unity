@@ -357,7 +357,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -385,7 +385,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393396532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.217, z: 0}
+  m_LocalPosition: {x: 0, y: 1.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1921280272}
@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933a0e12002669c4f983b95a59bbd382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 1000
+  mouseSensitivity: 400
   playerBody: {fileID: 1921280272}
 --- !u!1 &1829671765
 GameObject:
@@ -465,8 +465,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c7f2fff3097af4cb2fe74b640ad084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mazeRows: 17
-  mazeCols: 17
+  mazeRows: 41
+  mazeCols: 41
   cell: {fileID: 857466323}
   cellFloor: {fileID: 1908365380}
   gridSpacingOffset: 1
@@ -534,7 +534,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dd3edf3c47597f54590309395e62a844, type: 2}
+  - {fileID: 2100000, guid: ce6d1d4a549fc3247ad229c592734dc8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -621,8 +621,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921280270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.01339, y: 1.17, z: 1.1364}
-  m_LocalScale: {x: 0.65686, y: 0.20298289, z: 0.65686}
+  m_LocalPosition: {x: 1.01339, y: 0.389, z: 1.1364}
+  m_LocalScale: {x: 0.65686, y: 0.3014905, z: 0.65686}
   m_Children:
   - {fileID: 1955290566}
   - {fileID: 1393396535}
@@ -642,7 +642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1921280271}
-  speed: 12
+  speed: 5
 --- !u!1 &1955290565
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,7 +671,7 @@ Transform:
   m_GameObject: {fileID: 1955290565}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.5, z: 1.2}
+  m_LocalScale: {x: 1.45488, y: 2.1772277, z: 1.45488}
   m_Children: []
   m_Father: {fileID: 1921280272}
   m_RootOrder: 0

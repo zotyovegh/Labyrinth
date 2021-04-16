@@ -6,7 +6,7 @@ public class LabyrinthLoader : MonoBehaviour
 {
     public int mazeRows, mazeCols;
     public GameObject cell;
-    public GameObject cellFloor;
+   // public GameObject cellFloor;
     public float gridSpacingOffset = 1f;
 
     // Start is called before the first frame update
@@ -31,14 +31,14 @@ public class LabyrinthLoader : MonoBehaviour
         {
             for (int c = 0; c < mazeCols; c++)
             {                
-                Vector3 cellPosition = new Vector3(r * gridSpacingOffset, 1, c * gridSpacingOffset) + Vector3.zero;
-                Vector3 floorPosition = new Vector3(r * gridSpacingOffset, 0, c * gridSpacingOffset) + Vector3.zero;
+                Vector3 cellPosition = new Vector3(r * gridSpacingOffset*2, 1, c * gridSpacingOffset*2) + Vector3.zero;
+              //  Vector3 floorPosition = new Vector3(r * gridSpacingOffset*2, 0, c * gridSpacingOffset*2) + Vector3.zero;
 
                 cells[r, c] = new MazeCell();
                 cells[r, c].cellRow = r;
                 cells[r, c].cellCol = c;
                 cells[r, c].body = Instantiate(cell, cellPosition, Quaternion.identity);
-                cells[r, c].floor = Instantiate(cellFloor, floorPosition, Quaternion.identity);
+               //S cells[r, c].floor = Instantiate(cellFloor, floorPosition, Quaternion.identity);
             }
         }
     }
