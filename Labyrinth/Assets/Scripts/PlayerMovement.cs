@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed = 12f;
 
-
     void Update()
     {
         float x = Input.GetAxis("Horizontal");

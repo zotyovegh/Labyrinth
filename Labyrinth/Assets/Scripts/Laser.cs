@@ -6,6 +6,7 @@ public class Laser : MonoBehaviour
 {
     private LineRenderer lr;
     public GameObject Enemy;
+    public bool Enemyfound = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,7 @@ public class Laser : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {        
         lr.SetPosition(0, Enemy.transform.position);
         RaycastHit hit;
 
@@ -22,6 +23,12 @@ public class Laser : MonoBehaviour
         {
             if (hit.collider)
             {
+                if(hit.collider.tag == "Player")
+                {
+                    //    Debug.LogError(hit.collider.tag);
+                    Enemyfound = true;
+                }
+                
                 lr.SetPosition(1, hit.point);
             }
         }
