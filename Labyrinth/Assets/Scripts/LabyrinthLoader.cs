@@ -6,6 +6,7 @@ public class LabyrinthLoader : MonoBehaviour
 {
     public int mazeRows, mazeCols;
     public GameObject cell;
+    public GameObject enemy;
    // public GameObject cellFloor;
     public float gridSpacingOffset = 1f;
 
@@ -13,10 +14,10 @@ public class LabyrinthLoader : MonoBehaviour
     void Start()
     {
         MazeCell[,] cells = new MazeCell[mazeRows, mazeCols];
-        InitializeMaze(cells);
+        InitializeGrid(cells);
 
         MazeAlgorithm ma = new PrimsAlgorithm(cells);
-        ma.CreateLabyrinth();
+        ma.CreateLabyrinth(enemy, gridSpacingOffset);
     }
 
     // Update is called once per frame
@@ -25,7 +26,7 @@ public class LabyrinthLoader : MonoBehaviour
         
     }
 
-    private void InitializeMaze(MazeCell[,] cells)
+    private void InitializeGrid(MazeCell[,] cells)
     {
         for(int r = 0; r < mazeRows; r++)
         {

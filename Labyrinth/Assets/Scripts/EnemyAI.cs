@@ -7,7 +7,7 @@ public class EnemyAI : MonoBehaviour
 {
     private NavMeshAgent Mob;
 
-    public GameObject Player;
+    private GameObject Player;
     public GameObject Laser;
     private Laser LaserScript;
 
@@ -18,12 +18,13 @@ public class EnemyAI : MonoBehaviour
     {
         Mob = GetComponent<NavMeshAgent>();
         LaserScript = Laser.GetComponent<Laser>();
+        Player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.LogError(LaserScript.timeValue);
+     //   Debug.LogError(LaserScript.timeValue);
         if (!LaserScript.Enemyfound)
         {
             transform.Rotate(new Vector3(30, 30, 35) * Time.deltaTime);

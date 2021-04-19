@@ -311,7 +311,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 903262ac4885b72459ac5112829da47f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
   Laser: {fileID: 4417830356379350868}
   MobDistanceRun: 10000
 --- !u!1 &4417830356379350868

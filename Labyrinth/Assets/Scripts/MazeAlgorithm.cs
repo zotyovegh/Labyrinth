@@ -14,5 +14,8 @@ public abstract class MazeAlgorithm
         mazeCols = cells.GetLength(1);
     }
 
-    public abstract void CreateLabyrinth();
+    public abstract void CreateLabyrinth(GameObject enemy, float gridSpacingOffset);
+
+    public abstract List<MazeCell> UpdateLabyrinth(MazeCell[,] grid, MazeCell startCell);
+
 }
