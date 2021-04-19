@@ -9,6 +9,7 @@ public class LabyrinthLoader : MonoBehaviour
     public GameObject enemy;
    // public GameObject cellFloor;
     public float gridSpacingOffset = 1f;
+    public int safeDistance, enemyAmount;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,7 @@ public class LabyrinthLoader : MonoBehaviour
         InitializeGrid(cells);
 
         MazeAlgorithm ma = new PrimsAlgorithm(cells);
-        ma.CreateLabyrinth(enemy, gridSpacingOffset);
+        ma.CreateLabyrinth(enemy, gridSpacingOffset, safeDistance, enemyAmount);
     }
 
     // Update is called once per frame

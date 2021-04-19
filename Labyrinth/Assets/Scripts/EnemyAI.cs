@@ -24,25 +24,15 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     //   Debug.LogError(LaserScript.timeValue);
         if (!LaserScript.Enemyfound)
         {
             transform.Rotate(new Vector3(30, 30, 35) * Time.deltaTime);
         }
         else
         {
-            /* float distance = Vector3.Distance(transform.position, Player.transform.position);
-
-             if(distance < MobDistanceRun)
-                 {*/
             Vector3 dirToPlayer = transform.position - Player.transform.position;
             Vector3 newPos = transform.position - dirToPlayer;
-            Mob.SetDestination(newPos);
-            //  }
+            Mob.SetDestination(newPos);         
         }
-
-
-        //if detected
-
     }
 }
