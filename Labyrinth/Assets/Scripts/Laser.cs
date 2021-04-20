@@ -7,17 +7,21 @@ public class Laser : MonoBehaviour
     private LineRenderer lr;
     public GameObject Enemy;
     public bool Enemyfound = false;
-    public float timeValue = 10;
+    public float timeValue;
+    public float timeDefault;
+    public bool timeOff = false;
 
     // Start is called before the first frame update
     void Start()
     {
         lr = GetComponent<LineRenderer>();
+        timeValue = timeDefault;
     }
 
     // Update is called once per frame
     void Update()
-    {        
+    {
+        
         lr.SetPosition(0, Enemy.transform.position);
         RaycastHit hit;
 
@@ -28,7 +32,7 @@ public class Laser : MonoBehaviour
                 if(hit.collider.tag == "Player")
                 {
                     Enemyfound = true;
-                    timeValue = 10;
+                    timeValue = timeDefault;
                 }
                 
                 lr.SetPosition(1, hit.point);
@@ -40,14 +44,20 @@ public class Laser : MonoBehaviour
 
     void Timer()
     {
-        if(timeValue  > 0 && Enemyfound)
+        if(timeValue  > 0 && Enemyfound && !timeOff)
         {
             timeValue -= Time.deltaTime;
         }
         else
         {
-            timeValue = 10;
+            if(timeValue <= 0)
+            {
+               timeOff = true;
+            }
+            timeValue = timeDefault;
             Enemyfound = false;
+            
+            
         }
     }
 }

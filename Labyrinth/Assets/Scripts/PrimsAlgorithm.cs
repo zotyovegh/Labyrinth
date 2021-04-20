@@ -28,13 +28,13 @@ public class PrimsAlgorithm : MazeAlgorithm
         List<MazeCell> path = UpdateLabyrinth(cells, cells[1, 1]);
         int safeZone = (int)(path[path.Count - 1].position * 0.2);
 
-        List<MazeCell> newList = Shuffle(path.Where(x => x.position > safeDistance).ToList()).Take(enemyAmount).ToList();
-        
-        for (int i = 0; i < newList.Count-1; i++)
+        List<MazeCell> newList = Shuffle(path.Where(x => (x.position > safeDistance && !x.isWall)).ToList()).Take(enemyAmount).ToList();
+
+       /* for (int i = 0; i < newList.Count-1; i++)
         {
             Vector3 cellPosition = new Vector3(newList[i].cellRow * gridSpacingOffset * 2, 1, newList[i].cellCol * gridSpacingOffset * 2) + Vector3.zero;
             newList[i].body = GameObject.Instantiate(enemy, cellPosition, Quaternion.identity);
-        }
+        }*/
     }
     void getNeighboringWalls(MazeCell cell, MazeCell[,]cells, List<MazeCell[]> wallPairs)
     {
