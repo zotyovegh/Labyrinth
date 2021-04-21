@@ -222,7 +222,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 48.700912}
   m_Children: []
   m_Father: {fileID: 2014007418}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -55.210003, z: 0}
 --- !u!208 &252882811
 NavMeshObstacle:
@@ -387,12 +387,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406702021}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40, y: 0, z: -43.68}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 39.566, y: -20.650888, z: -7.1806145}
   m_LocalScale: {x: 8, y: 4.4742, z: 8}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 2014007418}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &578071733
 GameObject:
@@ -518,7 +518,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 2014007418}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &667293320
 NavMeshObstacle:
@@ -636,7 +636,7 @@ MonoBehaviour:
   cell: {fileID: 857466323}
   enemy: {fileID: 4417830355860364213, guid: b39b6f99ec2c4f942aa167debeda61da, type: 3}
   gridSpacingOffset: 1
-  safeDistance: 5
+  safeDistance: 20
   enemyAmount: 60
 --- !u!4 &1829671767
 Transform:
@@ -684,7 +684,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 2014007418}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &1839858582
 NavMeshObstacle:
@@ -789,12 +789,13 @@ Transform:
   m_LocalPosition: {x: 0.43400002, y: 20.650888, z: -36.499386}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 406702025}
   - {fileID: 2110290803}
   - {fileID: 667293319}
   - {fileID: 1839858581}
   - {fileID: 252882810}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2110290802
 GameObject:
@@ -828,7 +829,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 2014007418}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &2110290804
 NavMeshObstacle:
@@ -994,6 +995,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2182704986153595930, guid: c7e2f728947c08a4294c7fc60ad07bed,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182704986153595930, guid: c7e2f728947c08a4294c7fc60ad07bed,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.5636835
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182704986153595930, guid: c7e2f728947c08a4294c7fc60ad07bed,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 8.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182704986153595930, guid: c7e2f728947c08a4294c7fc60ad07bed,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 40
       objectReference: {fileID: 0}
@@ -1119,12 +1135,17 @@ PrefabInstance:
     - target: {fileID: 9078506965156209443, guid: 8861a8a1fd498044ca9787f31dff4538,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.25
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078506965156209443, guid: 8861a8a1fd498044ca9787f31dff4538,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.93
       objectReference: {fileID: 0}
     - target: {fileID: 9078506965156209443, guid: 8861a8a1fd498044ca9787f31dff4538,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -58.01
+      value: 2.13
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -8307805601164007336, guid: 8861a8a1fd498044ca9787f31dff4538, type: 3}

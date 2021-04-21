@@ -7,6 +7,7 @@ using System.Linq;
 public class PrimsAlgorithm : MazeAlgorithm
 {
     public PrimsAlgorithm(MazeCell[,] cells) : base(cells) { }
+    private static System.Random rand = new System.Random();
     public override void CreateLabyrinth(GameObject enemy, float gridSpacingOffset, int safeDistance, int enemyAmount)
     {
         List<MazeCell[]> wallPairs = new List<MazeCell[]>();
@@ -33,7 +34,7 @@ public class PrimsAlgorithm : MazeAlgorithm
         for (int i = 0; i < newList.Count-1; i++)
         {
             Vector3 cellPosition = new Vector3(newList[i].cellRow * gridSpacingOffset * 2, 1, newList[i].cellCol * gridSpacingOffset * 2) + Vector3.zero;
-            newList[i].body = GameObject.Instantiate(enemy, cellPosition, Quaternion.identity);
+            newList[i].body = GameObject.Instantiate(enemy, cellPosition, Quaternion.Euler(0, rand.Next(360), 0));
         }
     }
     void getNeighboringWalls(MazeCell cell, MazeCell[,]cells, List<MazeCell[]> wallPairs)
@@ -179,5 +180,4 @@ public class PrimsAlgorithm : MazeAlgorithm
         }
         return list;
     }
-
 }
