@@ -13,7 +13,7 @@ public class PlacementController : MonoBehaviour
     public string selectableTag = "Selectable";
 
     private GameObject selectedWall;
-    private WallScript wallScript; 
+    //private WallScript wallScript; 
 
     // Start is called before the first frame update
     void Start()
@@ -54,33 +54,28 @@ public class PlacementController : MonoBehaviour
     {
         if (selectedWall != null)
         {
-            var selectionRenderer = selectedWall.GetComponent<Renderer>();
-            selectionRenderer.material = defaultMaterial;
+            var wall = selectedWall;
+            WallScript wallScript = wall.GetComponent<WallScript>();
+            wallScript.torchEast = false;
             selectedWall = null;
         }
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitInfo;
+
         if(Physics.Raycast(ray, out hitInfo))
-        {
-            
+        {            
             if (hitInfo.transform.gameObject.CompareTag(selectableTag))
             {
-                var wall = hitInfo.transform.gameObject;
-                var selectionObject = wall.GetComponent<Renderer>();
-                
-                if(selectionObject != null)
+                var wall = hitInfo.transform.gameObject;                
+                if(wall != null)
                 {
-                    wallScript = wall.GetComponent<WallScript>();
+                    WallScript wallScript = wall.GetComponent<WallScript>();
                     wallScript.torchEast = true;
-                    selectionObject.material = highlightMaterial;
                 }
-
                 selectedWall = wall;
-            }
-            
-        }
-       
+            }            
+        }       
     }
 
     private void ReleaseIfClicked()

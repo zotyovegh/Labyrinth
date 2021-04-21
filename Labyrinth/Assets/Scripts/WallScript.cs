@@ -9,6 +9,7 @@ public class WallScript : MonoBehaviour
     public bool torchEast = false;
     public bool torchSouth = false;
     public bool torchWest = false;
+    public string naming;
 
     void Start()
     {
@@ -20,7 +21,7 @@ public class WallScript : MonoBehaviour
     {
         if(torchEast || torchNorth || torchSouth || torchWest)
         {
-            Debug.LogError("SELECTED");
+            Debug.LogError(naming);
         }
         //Place torch if boolean is true
     }
