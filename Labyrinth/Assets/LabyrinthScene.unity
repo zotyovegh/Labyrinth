@@ -190,6 +190,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b39b6f99ec2c4f942aa167debeda61da, type: 3}
+--- !u!1 &157660322
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 157660324}
+  - component: {fileID: 157660323}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &157660323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157660322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cce4b773df2a724b812c9d1fbbcb680, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  torch: {fileID: 0}
+  hotkey: 32
+--- !u!4 &157660324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157660322}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.3260603, y: 9.993356, z: 13.6145}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &252882809
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,7 +1180,7 @@ PrefabInstance:
     - target: {fileID: 9078506965156209443, guid: 8861a8a1fd498044ca9787f31dff4538,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 25.71
       objectReference: {fileID: 0}
     - target: {fileID: 9078506965156209443, guid: 8861a8a1fd498044ca9787f31dff4538,
         type: 3}
@@ -1145,7 +1190,7 @@ PrefabInstance:
     - target: {fileID: 9078506965156209443, guid: 8861a8a1fd498044ca9787f31dff4538,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.13
+      value: -41.36
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -8307805601164007336, guid: 8861a8a1fd498044ca9787f31dff4538, type: 3}
