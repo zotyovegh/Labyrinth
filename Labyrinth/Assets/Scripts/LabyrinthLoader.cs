@@ -19,6 +19,9 @@ public class LabyrinthLoader : MonoBehaviour
 
         MazeAlgorithm ma = new PrimsAlgorithm(cells);
         ma.CreateLabyrinth(enemy, gridSpacingOffset, safeDistance, enemyAmount);
+
+        Vector3 cellPosition = new Vector3(1 * gridSpacingOffset * 2, 1, (-5) * gridSpacingOffset * 2) + Vector3.zero;
+     //  GameObject.Instantiate(enemy, cellPosition, Quaternion.identity);
     }
 
     // Update is called once per frame
