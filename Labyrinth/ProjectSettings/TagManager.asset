@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Laser
+  - Selectable
+  - Test1
+  - Test2
   layers:
   - Default
   - TransparentFX
