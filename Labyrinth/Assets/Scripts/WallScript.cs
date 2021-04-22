@@ -21,7 +21,7 @@ public class WallScript : MonoBehaviour
     {
         if(torchEast || torchNorth || torchSouth || torchWest)
         {
-            Debug.LogError(naming);
+         //   Debug.LogError(naming);
         }
         //Place torch if boolean is true
     }

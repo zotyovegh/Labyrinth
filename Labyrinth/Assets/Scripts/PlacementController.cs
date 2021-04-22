@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,47 +8,25 @@ public class PlacementController : MonoBehaviour
     public GameObject torch;
     public KeyCode hotkey = KeyCode.Space;
 
-    private GameObject currentTorch;
-    public Material highlightMaterial;
-    public Material defaultMaterial;
     public string selectableTag = "Selectable";
 
     private GameObject selectedWall;
-    //private WallScript wallScript; 
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-       /* HandleNewTorchHotkey();
 
-        if(currentTorch != null)
+       /* if(currentTorch != null)
         { }*/
   //  ReleaseIfClicked();
 
             MoveTorchToMouse();
         
        
-    }
-
-    private void HandleNewTorchHotkey()
-    {
-        if (Input.GetKeyDown(hotkey))
-        {
-            if(currentTorch != null)
-            {
-                Destroy(currentTorch);
-            }
-            else
-            {
-                currentTorch = Instantiate(torch);
-            }
-        }
     }
 
     private void MoveTorchToMouse()
@@ -70,6 +49,12 @@ public class PlacementController : MonoBehaviour
                 var wall = hitInfo.transform.gameObject;                
                 if(wall != null)
                 {
+                    torch.transform.position = hitInfo.point;
+                    torch.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
+                    
+                    string direction = GetDirection(transform, hitInfo);
+                    Debug.Log(direction);
+                    // Instantiate(torch);
                     WallScript wallScript = wall.GetComponent<WallScript>();
                     wallScript.torchEast = true;
                 }
@@ -78,11 +63,41 @@ public class PlacementController : MonoBehaviour
         }       
     }
 
+    private string GetDirection(Transform transform, RaycastHit hitInfo)
+    {
+        string direction = null;
+        float fwdBack = Vector3.Dot(transform.forward, hitInfo.normal);
+        float right = Vector3.Dot(transform.right, hitInfo.normal);
+        if (fwdBack != 0)
+        {
+            if(fwdBack == 1) //NORTH
+            {
+                direction = "north";
+            }
+            if (fwdBack == -1) //SOUTH
+            {
+                direction = "south";
+            }
+        }
+        else
+        {
+            if (right == 1) //EAST
+            {
+                direction = "east";                
+            }
+            if(right == -1) //WEST
+            {
+                direction = "west";
+            }
+        }
+        return direction;
+    }
+
     private void ReleaseIfClicked()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            currentTorch = null;
+
         }
     }
 }
