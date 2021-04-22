@@ -17,12 +17,11 @@ public class PlacementController : MonoBehaviour
     }
 
     void Update()
-    {
-        MoveTorchToMouse();
-        ReleaseIfClicked();
+    {        
+        DetectAndAct();        
     }
 
-    private void MoveTorchToMouse()
+    private void DetectAndAct()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitInfo;
@@ -31,6 +30,7 @@ public class PlacementController : MonoBehaviour
         {
             if (hitInfo.transform.gameObject.CompareTag(selectableTag))
             {
+                ReleaseIfClicked();
                 var wall = hitInfo.transform.gameObject;
                 if (wall != null)
                 {

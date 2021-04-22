@@ -8,6 +8,7 @@ TagManager:
   - Selectable
   - Test1
   - Test2
+  - Torch
   layers:
   - Default
   - TransparentFX

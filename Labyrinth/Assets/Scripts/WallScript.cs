@@ -64,24 +64,28 @@ public class WallScript : MonoBehaviour
     void PlaceOnNorth()
     {
         wallPrefab.gameObject.transform.position = transform.position + new Vector3(0, 0, 1);
+        wallPrefab.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
         ObjectNorth = Instantiate(wallPrefab);
     }
 
     void PlaceOnEast()
     {
         wallPrefab.gameObject.transform.position = transform.position + new Vector3(1, 0, 0);
+        wallPrefab.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
         ObjectEast = Instantiate(wallPrefab);
     }
 
     void PlaceOnSouth()
     {
         wallPrefab.gameObject.transform.position = transform.position + new Vector3(0, 0, -1);
+        wallPrefab.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
         ObjectSouth = Instantiate(wallPrefab);
     }
 
     void PlaceOnWest()
     {
         wallPrefab.gameObject.transform.position = transform.position + new Vector3(-1, 0, 0);
+        wallPrefab.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
         ObjectWest = Instantiate(wallPrefab);
     }
 }
