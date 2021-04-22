@@ -9,6 +9,7 @@ public class PlacementController : MonoBehaviour
     public KeyCode hotkey = KeyCode.Space;
 
     public string selectableTag = "Selectable";
+    public float clickType = -1;
 
     private GameObject selectedWall;
 
@@ -25,8 +26,9 @@ public class PlacementController : MonoBehaviour
   //  ReleaseIfClicked();
 
             MoveTorchToMouse();
-        
-       
+        ReleaseIfClicked();
+
+
     }
 
     private void MoveTorchToMouse()
@@ -49,18 +51,39 @@ public class PlacementController : MonoBehaviour
                 var wall = hitInfo.transform.gameObject;                
                 if(wall != null)
                 {
-                    torch.transform.position = hitInfo.point;
-                    torch.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
-                    
-                    string direction = GetDirection(transform, hitInfo);
-                    Debug.Log(direction);
-                    // Instantiate(torch);
-                    WallScript wallScript = wall.GetComponent<WallScript>();
-                    wallScript.torchEast = true;
+                    if(clickType != -1)
+                    {
+                        string direction = GetDirection(transform, hitInfo);
+                        Debug.Log(clickType);
+                        WallScript wallScript = wall.GetComponent<WallScript>();
+                        
+                        TorchAction(direction, wallScript, clickType == 0 ? false : true);
+                        clickType = -1;
+                    }   
                 }
                 selectedWall = wall;
             }            
         }       
+    }
+
+    private void TorchAction(string direction, WallScript wallScript, bool v)
+    {
+        if (direction == "north")
+        {
+            wallScript.torchNorth = v;
+        }
+        else if (direction == "east")
+        {
+            wallScript.torchEast = v;
+        }
+        else if (direction == "south")
+        {
+            wallScript.torchSouth = v;
+        }
+        else if (direction == "west")
+        {
+            wallScript.torchWest = v;
+        }
     }
 
     private string GetDirection(Transform transform, RaycastHit hitInfo)
@@ -97,7 +120,10 @@ public class PlacementController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-
+            clickType = 0;
+        }else if (Input.GetMouseButtonDown(1))
+        {
+            clickType = 1;
         }
     }
 }
