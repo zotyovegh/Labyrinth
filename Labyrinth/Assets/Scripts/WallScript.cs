@@ -10,14 +10,12 @@ public class WallScript : MonoBehaviour
     public bool torchSouth = false;
     public bool torchWest = false;
 
-    public GameObject ObjectNorth = null ;
+    public GameObject ObjectNorth = null;
     public GameObject ObjectEast = null;
     public GameObject ObjectSouth = null;
     public GameObject ObjectWest = null;
 
     public GameObject wallPrefab;
-
-    public string naming;
 
     void Start()
     {
@@ -26,10 +24,11 @@ public class WallScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(torchSouth && ObjectSouth == null)
+        if (torchSouth && ObjectSouth == null)
         {
             PlaceOnSouth();
-        }else if(!torchSouth && ObjectSouth != null)
+        }
+        else if (!torchSouth && ObjectSouth != null)
         {
             Destroy(ObjectSouth);
         }

@@ -11,59 +11,40 @@ public class PlacementController : MonoBehaviour
     public string selectableTag = "Selectable";
     public float clickType = -1;
 
-    private GameObject selectedWall;
-
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-
-       /* if(currentTorch != null)
-        { }*/
-  //  ReleaseIfClicked();
-
-            MoveTorchToMouse();
+        MoveTorchToMouse();
         ReleaseIfClicked();
-
-
     }
 
     private void MoveTorchToMouse()
     {
-        if (selectedWall != null)
-        {
-            var wall = selectedWall;
-            WallScript wallScript = wall.GetComponent<WallScript>();
-            wallScript.torchEast = false;
-            selectedWall = null;
-        }
-
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitInfo;
 
-        if(Physics.Raycast(ray, out hitInfo))
-        {            
+        if (Physics.Raycast(ray, out hitInfo))
+        {
             if (hitInfo.transform.gameObject.CompareTag(selectableTag))
             {
-                var wall = hitInfo.transform.gameObject;                
-                if(wall != null)
+                var wall = hitInfo.transform.gameObject;
+                if (wall != null)
                 {
-                    if(clickType != -1)
+                    if (clickType != -1)
                     {
                         string direction = GetDirection(transform, hitInfo);
-                        Debug.Log(clickType);
                         WallScript wallScript = wall.GetComponent<WallScript>();
-                        
+
                         TorchAction(direction, wallScript, clickType == 0 ? false : true);
                         clickType = -1;
-                    }   
+                    }
                 }
-                selectedWall = wall;
-            }            
-        }       
+            }
+        }
     }
 
     private void TorchAction(string direction, WallScript wallScript, bool v)
@@ -93,7 +74,7 @@ public class PlacementController : MonoBehaviour
         float right = Vector3.Dot(transform.right, hitInfo.normal);
         if (fwdBack != 0)
         {
-            if(fwdBack == 1) //NORTH
+            if (fwdBack == 1) //NORTH
             {
                 direction = "north";
             }
@@ -106,9 +87,9 @@ public class PlacementController : MonoBehaviour
         {
             if (right == 1) //EAST
             {
-                direction = "east";                
+                direction = "east";
             }
-            if(right == -1) //WEST
+            if (right == -1) //WEST
             {
                 direction = "west";
             }
@@ -121,7 +102,8 @@ public class PlacementController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             clickType = 0;
-        }else if (Input.GetMouseButtonDown(1))
+        }
+        else if (Input.GetMouseButtonDown(1))
         {
             clickType = 1;
         }
