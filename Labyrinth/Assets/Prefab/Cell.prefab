@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 1953071392357310927}
   - component: {fileID: 1953071392357310926}
   - component: {fileID: 1953071392357310914}
+  - component: {fileID: 3497779551022345612}
   m_Layer: 0
   m_Name: Cell
-  m_TagString: Untagged
+  m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,3 +111,25 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &3497779551022345612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953071392357310921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 876cfa297de33f34c8c15b460806421d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  torchNorth: 0
+  torchEast: 0
+  torchSouth: 0
+  torchWest: 0
+  ObjectNorth: {fileID: 0}
+  ObjectEast: {fileID: 0}
+  ObjectSouth: {fileID: 0}
+  ObjectWest: {fileID: 0}
+  torchPrefab: {fileID: 5415236246820229699, guid: a045955e60c62ad4fac08fba71b63668,
+    type: 3}

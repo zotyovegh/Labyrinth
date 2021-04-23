@@ -15,7 +15,7 @@ public class WallScript : MonoBehaviour
     public GameObject ObjectSouth = null;
     public GameObject ObjectWest = null;
 
-    public GameObject wallPrefab;
+    public GameObject torchPrefab;
 
     void Start()
     {
@@ -63,29 +63,39 @@ public class WallScript : MonoBehaviour
 
     void PlaceOnNorth()
     {
-        wallPrefab.gameObject.transform.position = transform.position + new Vector3(0, 0, 1);
-        wallPrefab.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
-        ObjectNorth = Instantiate(wallPrefab);
+        torchPrefab.gameObject.transform.position = transform.position + new Vector3(0, 0, 1);
+       torchPrefab.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+        ObjectNorth = Instantiate(torchPrefab);
+        ObjectNorth.transform.Rotate(35, 0, 0);
+        Debug.LogError("NORTH");
     }
 
     void PlaceOnEast()
     {
-        wallPrefab.gameObject.transform.position = transform.position + new Vector3(1, 0, 0);
-        wallPrefab.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
-        ObjectEast = Instantiate(wallPrefab);
+        torchPrefab.gameObject.transform.position = transform.position + new Vector3(1, 0, 0);
+        torchPrefab.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+        ObjectEast = Instantiate(torchPrefab);
+        ObjectEast.transform.Rotate(0, 0, -35);
+
+
+        Debug.LogError("EAST");
     }
 
     void PlaceOnSouth()
     {
-        wallPrefab.gameObject.transform.position = transform.position + new Vector3(0, 0, -1);
-        wallPrefab.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
-        ObjectSouth = Instantiate(wallPrefab);
+        torchPrefab.gameObject.transform.position = transform.position + new Vector3(0, 0, -1);
+        torchPrefab.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+        ObjectSouth = Instantiate(torchPrefab);
+        ObjectSouth.transform.Rotate(-35, 0, 0);
+        Debug.LogError("SOUTH");
     }
 
     void PlaceOnWest()
     {
-        wallPrefab.gameObject.transform.position = transform.position + new Vector3(-1, 0, 0);
-        wallPrefab.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
-        ObjectWest = Instantiate(wallPrefab);
+        torchPrefab.gameObject.transform.position = transform.position + new Vector3(-1, 0, 0);
+        torchPrefab.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+        ObjectWest = Instantiate(torchPrefab);
+        ObjectWest.transform.Rotate(0, 0, 35);
+        Debug.LogError("WEST");
     }
 }
