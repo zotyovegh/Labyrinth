@@ -10,6 +10,7 @@ public class PlacementController : MonoBehaviour
 
     public string selectableTag = "Selectable";
     public float clickType = -1;
+    public int placementDistance;
 
     void Start()
     {
@@ -28,7 +29,8 @@ public class PlacementController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hitInfo))
         {
-            if (hitInfo.transform.gameObject.CompareTag(selectableTag))
+            Debug.LogError(hitInfo.distance);
+            if (hitInfo.transform.gameObject.CompareTag(selectableTag) && hitInfo.distance < placementDistance)
             {
                 ReleaseIfClicked();
                 var wall = hitInfo.transform.gameObject;
