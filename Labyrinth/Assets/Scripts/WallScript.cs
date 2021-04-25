@@ -67,7 +67,6 @@ public class WallScript : MonoBehaviour
        torchPrefab.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
         ObjectNorth = Instantiate(torchPrefab);
         ObjectNorth.transform.Rotate(35, 0, 0);
-        Debug.LogError("NORTH");
     }
 
     void PlaceOnEast()
@@ -76,9 +75,6 @@ public class WallScript : MonoBehaviour
         torchPrefab.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
         ObjectEast = Instantiate(torchPrefab);
         ObjectEast.transform.Rotate(0, 0, -35);
-
-
-        Debug.LogError("EAST");
     }
 
     void PlaceOnSouth()
@@ -87,7 +83,6 @@ public class WallScript : MonoBehaviour
         torchPrefab.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
         ObjectSouth = Instantiate(torchPrefab);
         ObjectSouth.transform.Rotate(-35, 0, 0);
-        Debug.LogError("SOUTH");
     }
 
     void PlaceOnWest()
@@ -96,6 +91,5 @@ public class WallScript : MonoBehaviour
         torchPrefab.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
         ObjectWest = Instantiate(torchPrefab);
         ObjectWest.transform.Rotate(0, 0, 35);
-        Debug.LogError("WEST");
     }
 }

@@ -100,11 +100,6 @@ public class PrimsAlgorithm : MazeAlgorithm
                 mainList.Add(neighbors[i]);
             }
         }
-
-        /* for (int i = 0; i < visitedCells.Count; i++)
-         {
-             grid[visitedCells[i].cellRow, visitedCells[i].cellCol].isPath = true;
-         }*/
         return visitedCells;
     }
 
