@@ -294,6 +294,7 @@ GameObject:
   - component: {fileID: 4417830355860364216}
   - component: {fileID: 4417830355860364215}
   - component: {fileID: 4417830355860364214}
+  - component: {fileID: 3448415263764016101}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -408,6 +409,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Laser: {fileID: 4417830356379350868}
   MobDistanceRun: 10000
+--- !u!114 &3448415263764016101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4417830355860364213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cea44f7a8f62bc9409537aa2ec1a345e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4417830356379350868
 GameObject:
   m_ObjectHideFlags: 0

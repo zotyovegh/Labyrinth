@@ -29,7 +29,6 @@ public class PlacementController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hitInfo))
         {
-            Debug.LogError(hitInfo.distance);
             if (hitInfo.transform.gameObject.CompareTag(selectableTag) && hitInfo.distance < placementDistance)
             {
                 ReleaseIfClicked();
