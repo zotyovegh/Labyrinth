@@ -5,6 +5,8 @@ public class ShootingManagement : MonoBehaviour
     public Camera cam;
     public float bulletStrength = 20f;
     public ParticleSystem flash;
+    public GameObject bleedingEffect;
+    public GameObject smokeEffect;
 
     void Update()
     {
@@ -20,7 +22,15 @@ public class ShootingManagement : MonoBehaviour
                 if(target != null)
                 {
                     target.ReceiveBullet(bulletStrength);
+                    GameObject obj = Instantiate(bleedingEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                    Destroy(obj, 2f);
                 }
+                else
+                {
+                    GameObject obj = Instantiate(smokeEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                    Destroy(obj, 2f);
+                }
+                
             }
         }
     }
