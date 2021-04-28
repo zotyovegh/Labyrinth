@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     private NavMeshAgent Mob;
-
+    public float currentHealth = 100f;
     private GameObject Player;
     public GameObject Laser;
     private Laser LaserScript;
@@ -38,6 +38,15 @@ public class EnemyAI : MonoBehaviour
             Vector3 dirToPlayer = transform.position - Player.transform.position;
             Vector3 newPos = transform.position - dirToPlayer;
             Mob.SetDestination(newPos);         
+        }
+    }
+    public void ReceiveBullet(float bulletStrength)
+    {
+        LaserScript.Enemyfound = true;
+        currentHealth -= bulletStrength;
+        if (currentHealth <= 0f)
+        {
+            Destroy(gameObject);
         }
     }
 }

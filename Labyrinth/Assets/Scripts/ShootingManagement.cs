@@ -18,7 +18,7 @@ public class ShootingManagement : MonoBehaviour
             {
                 Debug.Log(hit.transform.root.name);
 
-                LifeManagement target = hit.transform.root.GetComponent<LifeManagement>();
+                EnemyAI target = hit.transform.root.GetComponent<EnemyAI>();
                 if(target != null)
                 {
                     target.ReceiveBullet(bulletStrength);
