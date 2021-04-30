@@ -33,15 +33,19 @@ public class LabyrinthLoader : MonoBehaviour
 
     private void InitializeCup(MazeCell finalCell)
     {
-        Vector3 cupPosition = new Vector3((float)(finalCell.cellRow + 0.20) * gridSpacingOffset * 2, (float)0.8, finalCell.cellCol * gridSpacingOffset * 2) + Vector3.zero;
-        Instantiate(cup, cupPosition, Quaternion.identity);
-    
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.LogError(finalCell.shouldRotate);
+      
+        if (finalCell.shouldRotate)
+        {
+            Vector3 cupPosition = new Vector3(finalCell.cellRow * gridSpacingOffset * 2, (float)0.8, (float)(finalCell.cellCol-0.2) * gridSpacingOffset * 2) + Vector3.zero;
+            GameObject cupObj = Instantiate(cup, cupPosition, Quaternion.identity);
+            cupObj.transform.Rotate(0, 90, 0);
+        }
+        else
+        {
+            Vector3 cupPosition = new Vector3((float)(finalCell.cellRow + 0.20) * gridSpacingOffset * 2, (float)0.8, finalCell.cellCol * gridSpacingOffset * 2) + Vector3.zero;
+            Instantiate(cup, cupPosition, Quaternion.identity);
+        }        
     }
 
     private void InitializeGrid(MazeCell[,] cells)
@@ -60,6 +64,5 @@ public class LabyrinthLoader : MonoBehaviour
                 cells[r, c].floor = Instantiate(cellFloor, floorPosition, Quaternion.identity);
             }
         }
-    }
-   
+    }   
 }

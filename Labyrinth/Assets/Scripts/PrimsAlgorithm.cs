@@ -22,15 +22,18 @@ public class PrimsAlgorithm : MazeAlgorithm
             currentPair[0].isWall = false;
             currentPair[1].isWall = false;
             if (currentPair[0].body != null) GameObject.Destroy(currentPair[0].body);
-            if (currentPair[1].body != null) GameObject.Destroy(currentPair[1].body);
+            if (currentPair[1].body != null) GameObject.Destroy(currentPair[1].body); 
+
+            currentPair[1].prev = currentPair[0];
+
             getNeighboringWalls(currentPair[1], cells, wallPairs);
         }
         cells[1, 1].isStart = true;
         List<MazeCell> path = UpdateLabyrinth(cells, cells[1, 1]);
         int safeZone = (int)(path[path.Count - 1].position * 0.2);
 
-        MazeCell finishCell = path.Where(x => (x.position > safeDistance && !x.isWall)).ToList().LastOrDefault();
-
+        MazeCell finishCell = GetFinishCell(path, safeDistance);        
+        
         List <MazeCell> newList = Shuffle(path.Where(x => (x.position > safeDistance && !x.isWall && x.position != finishCell.position)).ToList()).Take(enemyAmount).ToList();
 
         for (int i = 0; i < newList.Count-1; i++)
@@ -40,6 +43,22 @@ public class PrimsAlgorithm : MazeAlgorithm
         }
         return finishCell;
     }
+
+    private MazeCell GetFinishCell(List<MazeCell> path, int safeDistance)
+    {       
+        MazeCell finishCell = path.Where(x => (x.position > safeDistance && !x.isWall)).LastOrDefault();
+
+        if(finishCell.cellRow != finishCell.prev.cellRow)
+        {
+            finishCell.shouldRotate = true;
+        }
+
+        Debug.Log("FINISH   " + finishCell.cellRow + " " + finishCell.cellCol);
+        Debug.Log("NEIGHBOR " + finishCell.prev.cellRow + " " + finishCell.prev.cellCol);
+
+        return finishCell;
+    }
+
     void getNeighboringWalls(MazeCell cell, MazeCell[,]cells, List<MazeCell[]> wallPairs)
     {
         int row = cell.cellRow;

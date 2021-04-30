@@ -9,8 +9,10 @@ public class MazeCell
     public bool isStart = false;
     public bool isPath = false;
     public bool isEnemy = false;
+    public bool shouldRotate = false;
     public MazeCell[] neighbors = null;
     public GameObject body;
+    public MazeCell prev;
     public GameObject floor;
     public int cellRow, cellCol, position;
 }
