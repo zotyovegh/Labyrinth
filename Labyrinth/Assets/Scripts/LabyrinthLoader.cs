@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class LabyrinthLoader : MonoBehaviour
     public GameObject enemy;
     public GameObject player;
     public GameObject cellFloor;
+    public GameObject cup;
     public float gridSpacingOffset = 1f;
     public int safeDistance, enemyAmount, mazeRows, mazeCols;
     public bool repositionPlayer = false;
@@ -24,7 +26,16 @@ public class LabyrinthLoader : MonoBehaviour
         InitializeGrid(cells);
 
         MazeAlgorithm ma = new PrimsAlgorithm(cells);
-        ma.CreateLabyrinth(enemy, gridSpacingOffset, safeDistance, enemyAmount);        
+        MazeCell finalCell =  ma.CreateLabyrinth(enemy, gridSpacingOffset, safeDistance, enemyAmount);
+
+        InitializeCup(finalCell);
+    }
+
+    private void InitializeCup(MazeCell finalCell)
+    {
+        Vector3 cupPosition = new Vector3((float)(finalCell.cellRow + 0.20) * gridSpacingOffset * 2, (float)0.8, finalCell.cellCol * gridSpacingOffset * 2) + Vector3.zero;
+        Instantiate(cup, cupPosition, Quaternion.identity);
+    
     }
 
     // Update is called once per frame
