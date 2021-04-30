@@ -9,11 +9,6 @@ public class PlacementController : MonoBehaviour
     public float clickType = -1;
     public int placementDistance = 10;
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {        
         DetectAndAct();        
@@ -34,7 +29,9 @@ public class PlacementController : MonoBehaviour
                 {
                     if (clickType != -1)
                     {
-                        string direction = GetDirection(transform, hitInfo);
+                        GameObject emptyGO = new GameObject();
+                        Transform newTransform = emptyGO.transform;
+                        string direction = GetDirection(newTransform, hitInfo);
                         WallScript wallScript = wall.GetComponent<WallScript>();
 
                         TorchAction(direction, wallScript, clickType == 0 ? false : true);
@@ -68,26 +65,28 @@ public class PlacementController : MonoBehaviour
     private string GetDirection(Transform transform, RaycastHit hitInfo)
     {
         string direction = null;
-        float fwdBack = Vector3.Dot(transform.forward, hitInfo.normal);
-        float right = Vector3.Dot(transform.right, hitInfo.normal);
-        if (fwdBack != 0)
+        float xAxis = Vector3.Dot(transform.forward, hitInfo.normal);
+        float yAxis = Vector3.Dot(transform.right, hitInfo.normal);
+        if (xAxis != 0)
         {
-            if (fwdBack == 1) //NORTH
+            Debug.Log("Vertical");
+            if (xAxis == 1) //NORTH
             {
                 direction = "north";
             }
-            if (fwdBack == -1) //SOUTH
+            if (xAxis == -1) //SOUTH
             {
                 direction = "south";
             }
         }
         else
         {
-            if (right == 1) //EAST
+            Debug.Log("Horizontal");
+            if (yAxis == 1) //EAST
             {
                 direction = "east";
             }
-            if (right == -1) //WEST
+            if (yAxis == -1) //WEST
             {
                 direction = "west";
             }
