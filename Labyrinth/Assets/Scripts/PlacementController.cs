@@ -5,12 +5,9 @@ using UnityEngine;
 
 public class PlacementController : MonoBehaviour
 {
-    public GameObject torch;
-    public KeyCode hotkey = KeyCode.Space;
-
     public string selectableTag = "Selectable";
     public float clickType = -1;
-    public int placementDistance;
+    public int placementDistance = 10;
 
     void Start()
     {
