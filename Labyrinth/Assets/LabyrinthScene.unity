@@ -470,13 +470,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 578071733}
-  m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
 --- !u!1 &667293318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,12 +1050,13 @@ MonoBehaviour:
   player: {fileID: 1878360654}
   cellFloor: {fileID: 2351945735342302445, guid: 49bf9c7a2e7449249be955775b2417eb,
     type: 3}
+  cup: {fileID: 7021819050958281906, guid: 5a3bbcb8576c4144d8d7fff12efe6f7b, type: 3}
   gridSpacingOffset: 1
   safeDistance: 20
   enemyAmount: 60
   mazeRows: 41
   mazeCols: 41
-  repositionPlayer: 1
+  repositionPlayer: 0
 --- !u!4 &1829671767
 Transform:
   m_ObjectHideFlags: 0
