@@ -10,14 +10,12 @@ public class ShootingManagement : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0)) // && gun is chosen
+        if(Input.GetMouseButtonDown(0))
         {
             flash.Play();
             RaycastHit hit;
             if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
             {
-                Debug.Log(hit.transform.root.name);
-
                 EnemyAI target = hit.transform.root.GetComponent<EnemyAI>();
                 if(target != null)
                 {

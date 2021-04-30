@@ -69,7 +69,6 @@ public class PlacementController : MonoBehaviour
         float yAxis = Vector3.Dot(transform.right, hitInfo.normal);
         if (xAxis != 0)
         {
-            Debug.Log("Vertical");
             if (xAxis == 1) //NORTH
             {
                 direction = "north";
@@ -81,7 +80,6 @@ public class PlacementController : MonoBehaviour
         }
         else
         {
-            Debug.Log("Horizontal");
             if (yAxis == 1) //EAST
             {
                 direction = "east";
