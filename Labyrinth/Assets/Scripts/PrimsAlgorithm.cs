@@ -52,10 +52,6 @@ public class PrimsAlgorithm : MazeAlgorithm
         {
             finishCell.shouldRotate = true;
         }
-
-        Debug.Log("FINISH   " + finishCell.cellRow + " " + finishCell.cellCol);
-        Debug.Log("NEIGHBOR " + finishCell.prev.cellRow + " " + finishCell.prev.cellCol);
-
         return finishCell;
     }
 
