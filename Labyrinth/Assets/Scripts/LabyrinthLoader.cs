@@ -32,9 +32,7 @@ public class LabyrinthLoader : MonoBehaviour
     }
 
     private void InitializeCup(MazeCell finalCell)
-    {
-        Debug.LogError(finalCell.shouldRotate);
-      
+    {      
         if (finalCell.shouldRotate)
         {
             Vector3 cupPosition = new Vector3(finalCell.cellRow * gridSpacingOffset * 2, (float)0.8, (float)(finalCell.cellCol-0.2) * gridSpacingOffset * 2) + Vector3.zero;
