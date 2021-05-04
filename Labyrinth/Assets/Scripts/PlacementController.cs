@@ -16,6 +16,7 @@ public class PlacementController : MonoBehaviour
 
     private void DetectAndAct()
     {
+        
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitInfo;
 

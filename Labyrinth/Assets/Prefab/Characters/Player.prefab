@@ -74,9 +74,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1051987631066832881}
   - {fileID: 4998094214993496247}
   - {fileID: 243710136318415572}
-  - {fileID: 1051987631066832881}
   m_Father: {fileID: 9078506965684076804}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -123,7 +123,7 @@ Transform:
   - {fileID: 3997756414997151153}
   - {fileID: 6998695197932876650}
   m_Father: {fileID: 4920997019954230985}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9078506965122193398
 GameObject:
@@ -443,7 +443,7 @@ PrefabInstance:
     - target: {fileID: 1863642316755233220, guid: 7b2ae15fed6ddfa4ba12a63bc4714fff,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1863642316755233220, guid: 7b2ae15fed6ddfa4ba12a63bc4714fff,
         type: 3}
@@ -500,6 +500,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hammer
       objectReference: {fileID: 0}
+    - target: {fileID: 7020429660313659583, guid: 7b2ae15fed6ddfa4ba12a63bc4714fff,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b2ae15fed6ddfa4ba12a63bc4714fff, type: 3}
 --- !u!4 &4998094214993496247 stripped
@@ -533,7 +538,7 @@ PrefabInstance:
     - target: {fileID: 5884386279914037502, guid: 8054d2c070746324ea91908349b2b5ba,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5884386279914037502, guid: 8054d2c070746324ea91908349b2b5ba,
         type: 3}

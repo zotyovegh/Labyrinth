@@ -18,7 +18,10 @@ public class ItemHandler : MonoBehaviour
         int i = 0;
         foreach(Transform item in transform)
         {
-            if (i == selectedItem) item.gameObject.SetActive(true);
+            if (i == selectedItem)
+            {
+                item.gameObject.SetActive(true);
+            }
             else item.gameObject.SetActive(false);
             i++;
         }
