@@ -55,13 +55,18 @@ public class LabyrinthLoader : MonoBehaviour
             for (int c = 0; c < mazeCols; c++)
             {                
                 Vector3 cellPosition = new Vector3(r * gridSpacingOffset*2, 1, c * gridSpacingOffset*2) + Vector3.zero;
-                Vector3 floorPosition = new Vector3(r * gridSpacingOffset * 2, 0, c * gridSpacingOffset * 2) + Vector3.zero;
-
+                Vector3 floorPosition = new Vector3(r * gridSpacingOffset * 2, 0, c * gridSpacingOffset * 2) + Vector3.zero;                
                 cells[r, c] = new MazeCell();
                 cells[r, c].cellRow = r;
                 cells[r, c].cellCol = c;
-                cells[r, c].body = Instantiate(cell, cellPosition, Quaternion.identity);
+                cells[r, c].body = Instantiate(cell, cellPosition, Quaternion.identity);                
                 cells[r, c].floor = Instantiate(cellFloor, floorPosition, Quaternion.identity);
+
+                if (r == 0 || r == mazeRows - 1 || c == 0 || c == mazeCols-1)
+                {
+                    var wallScript = cells[r, c].body.GetComponent<WallScript>();
+                    wallScript.isMapEdgeElement = true;
+                }
             }
         }
     }   

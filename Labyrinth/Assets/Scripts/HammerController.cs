@@ -29,13 +29,23 @@ public class HammerController : MonoBehaviour
                 {
                     if (clickType != -1)
                     {
-                        Destroy(wall);
-
+                        DestroyWall(wall);
                         clickType = -1;
                     }
                 }
             }
         }
+    }
+
+    private void DestroyWall(GameObject wall)
+    {        
+        WallScript wallScript = wall.GetComponent<WallScript>();
+        if (wallScript.isMapEdgeElement) return;        
+        if (wallScript.ObjectNorth) Destroy(wallScript.ObjectNorth);
+        if (wallScript.ObjectEast) Destroy(wallScript.ObjectEast);
+        if (wallScript.ObjectSouth) Destroy(wallScript.ObjectSouth);
+        if (wallScript.ObjectWest) Destroy(wallScript.ObjectWest);
+        Destroy(wall);
     }
 
     private void ReleaseIfClicked()

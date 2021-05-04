@@ -5,6 +5,9 @@ using UnityEngine;
 public class WallScript : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    public bool isMapEdgeElement = false;
+
     public bool torchNorth = false;
     public bool torchEast = false;
     public bool torchSouth = false;
