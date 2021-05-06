@@ -7,6 +7,7 @@ public class MainMenuController : MonoBehaviour
 {
     public void PlaySurvival()
     {
+        GameSetup.gameType = "survival"; 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
