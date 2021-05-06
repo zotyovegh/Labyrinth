@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class GameSetup
 {
+    public static bool isSurvival;
     public static string gameType;
 }
