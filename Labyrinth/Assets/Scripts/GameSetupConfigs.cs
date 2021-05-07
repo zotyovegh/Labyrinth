@@ -53,7 +53,6 @@ public class GameSetups
         GameSetup.gameType = "custom";
         int sizeValue = int.Parse(size);
         GameSetup.size = sizeValue % 2 != 0 ? sizeValue : sizeValue + 1;
-        Debug.LogError(sizeValue + " " + GameSetup.size);
         GameSetup.safeDistance = int.Parse(safeDistance);
         GameSetup.enemyAmount = int.Parse(enemyAmount);
         GameSetup.torchAmount = torchAmount.Equals("∞") ? -1 : int.Parse(torchAmount);
