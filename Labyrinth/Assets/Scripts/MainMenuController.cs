@@ -7,6 +7,11 @@ using UnityEngine.SceneManagement;
 public class MainMenuController : MonoBehaviour
 {
     public TMPro.TextMeshProUGUI sizeSlider;
+    public TMPro.TextMeshProUGUI safeDistanceSlider;
+    public TMPro.TextMeshProUGUI torchAmountSlider;
+    public TMPro.TextMeshProUGUI enemyAmountSlider;
+    public TMPro.TextMeshProUGUI hammerLifeSlider;
+    public TMPro.TextMeshProUGUI bulletAmountSlider;
 
     public void PlaySurvival()
     {
@@ -41,8 +46,7 @@ public class MainMenuController : MonoBehaviour
 
     public void PlayCustom()
     {
-        Debug.LogError(sizeSlider.text);
-      //  GameSetups.SetCustom();
+        GameSetups.SetCustom(sizeSlider.text, safeDistanceSlider.text, enemyAmountSlider.text, torchAmountSlider.text, bulletAmountSlider.text, hammerLifeSlider.text);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

@@ -3058,6 +3058,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeSlider: {fileID: 0}
+  safeDistanceSlider: {fileID: 0}
+  torchAmountSlider: {fileID: 0}
+  enemyAmountSlider: {fileID: 0}
+  hammerLifeSlider: {fileID: 0}
+  bulletAmountSlider: {fileID: 0}
 --- !u!1 &807202511
 GameObject:
   m_ObjectHideFlags: 0
@@ -4574,6 +4579,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeSlider: {fileID: 27500901}
+  safeDistanceSlider: {fileID: 1494134090}
+  torchAmountSlider: {fileID: 990925877}
+  enemyAmountSlider: {fileID: 1063961764}
+  hammerLifeSlider: {fileID: 1719589735}
+  bulletAmountSlider: {fileID: 1290397320}
 --- !u!1 &1154273818
 GameObject:
   m_ObjectHideFlags: 0

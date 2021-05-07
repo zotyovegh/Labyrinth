@@ -48,14 +48,14 @@ public class GameSetups
         GameSetup.hammerLife = 3;
     }
 
-    public static void SetCustom(int size, int safeDistance, int enemyAmount, int torchAmount, int bulletAmount, int hammerLife)
+    public static void SetCustom(string size, string safeDistance, string enemyAmount, string torchAmount, string bulletAmount, string hammerLife)
     {
         GameSetup.gameType = "custom";
-        GameSetup.size = size;
-        GameSetup.safeDistance = safeDistance;
-        GameSetup.enemyAmount = enemyAmount;
-        GameSetup.torchAmount = torchAmount;
-        GameSetup.bulletAmount = bulletAmount;
-        GameSetup.hammerLife = hammerLife;
+        GameSetup.size = int.Parse(size);
+        GameSetup.safeDistance = int.Parse(safeDistance);
+        GameSetup.enemyAmount = int.Parse(enemyAmount);
+        GameSetup.torchAmount = torchAmount.Equals("∞") ? -1 : int.Parse(torchAmount);
+        GameSetup.bulletAmount = bulletAmount.Equals("∞") ? -1 : int.Parse(bulletAmount);
+        GameSetup.hammerLife = int.Parse(hammerLife);
     }
 }
