@@ -17,7 +17,7 @@ public class LabyrinthLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.LogError(GameSetup.gameType);
+       // Debug.LogError(GameSetup.gameType);
         if (repositionPlayer)
         {
             player.transform.position = new Vector3(2, 1, 2);

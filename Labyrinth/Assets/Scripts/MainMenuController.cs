@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
+    public TMPro.TextMeshProUGUI sizeSlider;
+
     public void PlaySurvival()
     {
         GameSetup.isSurvival = true;
@@ -38,7 +41,8 @@ public class MainMenuController : MonoBehaviour
 
     public void PlayCustom()
     {
-        GameSetups.setCustom();
+        Debug.LogError(sizeSlider.text);
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
