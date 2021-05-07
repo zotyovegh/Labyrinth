@@ -11,38 +11,38 @@ public class MainMenuController : MonoBehaviour
     public void PlaySurvival()
     {
         GameSetup.isSurvival = true;
-        GameSetups.setEasy();
+        GameSetups.SetEasy();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void PlayEasy()
     {
-        GameSetups.setEasy();
+        GameSetups.SetEasy();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void PlayMedium()
     {
-        GameSetups.setMedium();
+        GameSetups.SetMedium();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void PlayHard()
     {
-        GameSetups.setHard();
+        GameSetups.SetHard();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void PlayExtreme()
     {
-        GameSetups.setExtreme();
+        GameSetups.SetExtreme();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void PlayCustom()
     {
         Debug.LogError(sizeSlider.text);
-
+      //  GameSetups.SetCustom();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

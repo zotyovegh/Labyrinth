@@ -6,15 +6,35 @@ using UnityEngine.UI;
 public class SliderDisplayer : MonoBehaviour
 {
     TMPro.TextMeshProUGUI textToUpdate;
+    public Slider slider;
+    public int infiniteValue;
     public float value;
     // Start is called before the first frame update
+
     void Start()
     {
-        textToUpdate = GetComponent<TMPro.TextMeshProUGUI>();
+        textToUpdate = GetComponent<TMPro.TextMeshProUGUI>(); 
+        slider.onValueChanged.AddListener(delegate { OnValueChanged(); });
     }
 
-    public void valueUpdate(float data)
+    public void OnValueChanged()
     {
-        textToUpdate.text = Mathf.RoundToInt(data) + "";
+        float val = Mathf.RoundToInt(slider.value);
+        if (infiniteValue != 0)
+        {
+            if(val == infiniteValue)
+            {
+                textToUpdate.text = "∞";
+            }
+            else
+            {
+                textToUpdate.text = val + "";
+            }
+        }
+        else
+        {
+            textToUpdate.text = val + "";
+        }
+       
     }
 }
