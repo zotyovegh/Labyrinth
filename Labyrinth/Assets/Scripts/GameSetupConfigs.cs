@@ -40,9 +40,9 @@ public class GameSetups
     public static void SetExtreme()
     {
         GameSetup.gameType = "extreme";
-        GameSetup.size = 51;
+        GameSetup.size = 41;
         GameSetup.safeDistance = 20;
-        GameSetup.enemyAmount = 150;
+        GameSetup.enemyAmount = 100;
         GameSetup.torchAmount = 200;
         GameSetup.bulletAmount = 600;
         GameSetup.hammerLife = 3;
@@ -51,7 +51,9 @@ public class GameSetups
     public static void SetCustom(string size, string safeDistance, string enemyAmount, string torchAmount, string bulletAmount, string hammerLife)
     {
         GameSetup.gameType = "custom";
-        GameSetup.size = int.Parse(size);
+        int sizeValue = int.Parse(size);
+        GameSetup.size = sizeValue % 2 != 0 ? sizeValue : sizeValue + 1;
+        Debug.LogError(sizeValue + " " + GameSetup.size);
         GameSetup.safeDistance = int.Parse(safeDistance);
         GameSetup.enemyAmount = int.Parse(enemyAmount);
         GameSetup.torchAmount = torchAmount.Equals("∞") ? -1 : int.Parse(torchAmount);

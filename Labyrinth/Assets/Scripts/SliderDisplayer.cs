@@ -19,21 +19,20 @@ public class SliderDisplayer : MonoBehaviour
 
     public void OnValueChanged()
     {
-        float val = Mathf.RoundToInt(slider.value);
         if (infiniteValue != 0)
         {
-            if(val == infiniteValue)
+            if(slider.value == infiniteValue)
             {
                 textToUpdate.text = "∞";
             }
             else
             {
-                textToUpdate.text = val + "";
+                textToUpdate.text = slider.value + "";
             }
         }
         else
         {
-            textToUpdate.text = val + "";
+            textToUpdate.text = slider.value + "";
         }
        
     }
