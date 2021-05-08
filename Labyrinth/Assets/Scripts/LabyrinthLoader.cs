@@ -17,6 +17,7 @@ public class LabyrinthLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        InitializeDefaultData();
       //  Debug.LogError(GameSetup.bulletAmount);
         if (repositionPlayer)
         {
@@ -30,6 +31,23 @@ public class LabyrinthLoader : MonoBehaviour
         MazeCell finalCell =  ma.CreateLabyrinth(enemy, gridSpacingOffset, safeDistance, enemyAmount);
 
         InitializeCup(finalCell);
+    }
+
+    private void InitializeDefaultData()
+    {
+        if(GameSetup.size != 0)
+        {
+            mazeRows = GameSetup.size;
+            mazeCols = GameSetup.size;
+        }
+        if (GameSetup.enemyAmount != 0)
+        {
+            enemyAmount = GameSetup.enemyAmount;
+        }
+        if (GameSetup.safeDistance != 0)
+        {
+            safeDistance = GameSetup.safeDistance;
+        }
     }
 
     private void InitializeCup(MazeCell finalCell)

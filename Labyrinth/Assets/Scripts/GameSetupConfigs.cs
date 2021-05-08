@@ -10,7 +10,7 @@ public class GameSetups
         GameSetup.size = 9;
         GameSetup.safeDistance = 10;
         GameSetup.enemyAmount = 1;
-        GameSetup.torchAmount = -1; //endless
+        GameSetup.torchAmount = 3; //endless
         GameSetup.bulletAmount = -1; //endless
         GameSetup.hammerLife = 4;
     }

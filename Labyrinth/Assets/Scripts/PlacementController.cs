@@ -45,22 +45,25 @@ public class PlacementController : MonoBehaviour
 
     private void TorchAction(string direction, WallScript wallScript, bool v)
     {
-        if (direction == "north")
-        {
-            wallScript.torchNorth = v;
-        }
-        else if (direction == "east")
-        {
-            wallScript.torchEast = v;
-        }
-        else if (direction == "south")
-        {
-            wallScript.torchSouth = v;
-        }
-        else if (direction == "west")
-        {
-            wallScript.torchWest = v;
-        }
+        if (v && GameSetup.torchAmount == 0) return;
+            if (direction == "north")
+            {
+                wallScript.torchNorth = v;
+            }
+            else if (direction == "east")
+            {
+                wallScript.torchEast = v;
+            }
+            else if (direction == "south")
+            {
+                wallScript.torchSouth = v;
+            }
+            else if (direction == "west")
+            {
+                wallScript.torchWest = v;
+            }
+        
+        
     }
 
     private string GetDirection(Transform transform, RaycastHit hitInfo)

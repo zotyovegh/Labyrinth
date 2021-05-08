@@ -1567,6 +1567,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3997756414997151157, guid: 8861a8a1fd498044ca9787f31dff4538,
         type: 3}
+      propertyPath: m_Name
+      value: TorchInHand
+      objectReference: {fileID: 0}
+    - target: {fileID: 3997756414997151157, guid: 8861a8a1fd498044ca9787f31dff4538,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}

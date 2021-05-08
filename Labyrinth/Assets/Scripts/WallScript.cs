@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,49 +20,83 @@ public class WallScript : MonoBehaviour
     public GameObject ObjectWest = null;
 
     public GameObject torchPrefab;
+    public GameObject torchInHand;
 
     void Start()
     {
+        torchInHand = GameObject.Find("TorchInHand");
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {        
         if (torchSouth && ObjectSouth == null)
         {
-            PlaceOnSouth();
+            if (GameObject.Find("TorchInHand") != null && GameSetup.torchAmount != 0)
+            {
+                PlaceOnSouth();
+                HandleTorchPlacement();
+            }                  
         }
         else if (!torchSouth && ObjectSouth != null)
         {
+            HandleTorchDestroy();
             Destroy(ObjectSouth);
         }
 
         if (torchEast && ObjectEast == null)
         {
-            PlaceOnEast();
+            if (GameObject.Find("TorchInHand") != null && GameSetup.torchAmount != 0)
+            {
+                PlaceOnEast();
+                HandleTorchPlacement();
+            }           
         }
         else if (!torchEast && ObjectEast != null)
         {
+            HandleTorchDestroy();
             Destroy(ObjectEast);
         }
 
         if (torchNorth && ObjectNorth == null)
         {
-            PlaceOnNorth();
+            if (GameObject.Find("TorchInHand") != null && GameSetup.torchAmount != 0)
+            {
+                PlaceOnNorth();
+                HandleTorchPlacement();
+            }                      
         }
         else if (!torchNorth && ObjectNorth != null)
         {
+            HandleTorchDestroy();
             Destroy(ObjectNorth);
         }
 
         if (torchWest && ObjectWest == null)
         {
-            PlaceOnWest();
+            if (GameObject.Find("TorchInHand") != null && GameSetup.torchAmount != 0)
+            {
+                PlaceOnWest();
+                HandleTorchPlacement();
+            }                       
         }
         else if (!torchWest && ObjectWest != null)
         {
+            HandleTorchDestroy();
             Destroy(ObjectWest);
         }
+    }
+
+    private void HandleTorchPlacement()
+    {
+        GameSetup.torchAmount--;
+        if (GameSetup.torchAmount == 0)  torchInHand.SetActive(false); 
+    }
+
+    private void HandleTorchDestroy()
+    {
+        if (GameSetup.torchAmount == 0) torchInHand.SetActive(true);  
+        GameSetup.torchAmount++;
     }
 
     void PlaceOnNorth()

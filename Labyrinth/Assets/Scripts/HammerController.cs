@@ -39,13 +39,28 @@ public class HammerController : MonoBehaviour
 
     private void DestroyWall(GameObject wall)
     {        
-        WallScript wallScript = wall.GetComponent<WallScript>();
-        if (wallScript.isMapEdgeElement) return;        
-        if (wallScript.ObjectNorth) Destroy(wallScript.ObjectNorth);
-        if (wallScript.ObjectEast) Destroy(wallScript.ObjectEast);
-        if (wallScript.ObjectSouth) Destroy(wallScript.ObjectSouth);
-        if (wallScript.ObjectWest) Destroy(wallScript.ObjectWest);
-        Destroy(wall);
+        if(GameSetup.hammerLife > 0)
+        {
+            WallScript wallScript = wall.GetComponent<WallScript>();
+            if (wallScript.isMapEdgeElement) return;
+            if (wallScript.ObjectNorth) DestroyTorchOnWall(wallScript.ObjectNorth, wallScript);  
+            if (wallScript.ObjectEast) DestroyTorchOnWall(wallScript.ObjectEast, wallScript);
+            if (wallScript.ObjectSouth) DestroyTorchOnWall(wallScript.ObjectSouth, wallScript);
+            if (wallScript.ObjectWest) DestroyTorchOnWall(wallScript.ObjectWest, wallScript);
+            Destroy(wall);
+            GameSetup.hammerLife--;
+            if (GameSetup.hammerLife == 0) {
+                Destroy(gameObject);                    
+            }
+        }
+        
+    }
+
+    private void DestroyTorchOnWall(GameObject torch, WallScript wallScript)
+    {
+        Destroy(torch);
+        GameSetup.torchAmount++;
+        wallScript.torchInHand.SetActive(true);
     }
 
     private void ReleaseIfClicked()
