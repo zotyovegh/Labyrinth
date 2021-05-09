@@ -19,7 +19,7 @@ public class GameSetups
     {
         GameSetup.gameType = "medium";
         GameSetup.size = 17;
-        GameSetup.safeDistance = 10;
+        GameSetup.safeDistance = 8;
         GameSetup.enemyAmount = 10;
         GameSetup.torchAmount = 30;
         GameSetup.bulletAmount = -1; //endless
