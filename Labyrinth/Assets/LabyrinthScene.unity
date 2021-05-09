@@ -127,7 +127,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-462524
+  m_Name: pb_Mesh-1406720
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -290,7 +290,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-462530
+  m_Name: pb_Mesh-1406726
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -459,7 +459,7 @@ GameObject:
   - component: {fileID: 87218922}
   - component: {fileID: 87218921}
   m_Layer: 5
-  m_Name: ImageBg
+  m_Name: HammerBg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -666,7 +666,7 @@ GameObject:
   - component: {fileID: 107113219}
   - component: {fileID: 107113218}
   m_Layer: 5
-  m_Name: ImageBg
+  m_Name: GunBg1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1540,7 +1540,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-462526
+  m_Name: pb_Mesh-1406722
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1709,7 +1709,7 @@ GameObject:
   - component: {fileID: 780736433}
   - component: {fileID: 780736432}
   m_Layer: 5
-  m_Name: ImageBg
+  m_Name: TorchBg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1783,7 +1783,7 @@ GameObject:
   - component: {fileID: 826738633}
   - component: {fileID: 826738632}
   m_Layer: 5
-  m_Name: ImageBg
+  m_Name: TorchBg1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2085,7 +2085,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-462522
+  m_Name: pb_Mesh-1406718
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2413,7 +2413,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-462528
+  m_Name: pb_Mesh-1406724
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2582,7 +2582,7 @@ GameObject:
   - component: {fileID: 1546264663}
   - component: {fileID: 1546264662}
   m_Layer: 5
-  m_Name: ImageBg
+  m_Name: GunBg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2852,7 +2852,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-462510
+  m_Name: pb_Mesh-1406706
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3434,6 +3434,12 @@ MonoBehaviour:
   torchAmount: {fileID: 936612332}
   hammerLife: {fileID: 1843641674}
   bulletAmount: {fileID: 94357994}
+  torchBg1: {fileID: 826738632}
+  torchBg2: {fileID: 780736432}
+  hammerBg1: {fileID: 2136404274}
+  hammerBg2: {fileID: 87218921}
+  gunBg1: {fileID: 107113218}
+  gunBg2: {fileID: 1546264662}
 --- !u!1 &1839858580
 GameObject:
   m_ObjectHideFlags: 0
@@ -4116,7 +4122,7 @@ GameObject:
   - component: {fileID: 2136404275}
   - component: {fileID: 2136404274}
   m_Layer: 5
-  m_Name: ImageBg
+  m_Name: HammerBg1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -21,7 +21,7 @@ public class ItemHandler : MonoBehaviour
             if (i == selectedItem)
             {
                 item.gameObject.SetActive(true);
-                Debug.Log(item.gameObject.name);
+                GameSetup.itemInHand = item.gameObject.name;
             }
             else item.gameObject.SetActive(false);
             i++;
