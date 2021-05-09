@@ -28,6 +28,11 @@ public class ShootingManagement : MonoBehaviour
                     GameObject obj = Instantiate(smokeEffect, hit.point, Quaternion.LookRotation(hit.normal));
                     Destroy(obj, 2f);
                 }
+                if(GameSetup.bulletAmount > 0)GameSetup.bulletAmount--;
+                if(GameSetup.bulletAmount == 0)
+                {
+                    Destroy(gameObject.transform.parent.gameObject);
+                }
                 
             }
         }
