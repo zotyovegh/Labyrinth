@@ -8,9 +8,9 @@ public class GameSetups
     {
         GameSetup.gameType = "easy";
         GameSetup.size = 9;
-        GameSetup.safeDistance = 10;
+        GameSetup.safeDistance = 5;
         GameSetup.enemyAmount = 1;
-        GameSetup.torchAmount = 3; //endless
+        GameSetup.torchAmount = -1; //endless
         GameSetup.bulletAmount = -1; //endless
         GameSetup.hammerLife = 4;
     }
@@ -19,9 +19,9 @@ public class GameSetups
     {
         GameSetup.gameType = "medium";
         GameSetup.size = 17;
-        GameSetup.safeDistance = 20;
+        GameSetup.safeDistance = 10;
         GameSetup.enemyAmount = 10;
-        GameSetup.torchAmount = 50;
+        GameSetup.torchAmount = 30;
         GameSetup.bulletAmount = -1; //endless
         GameSetup.hammerLife = 3;
     }
@@ -32,7 +32,7 @@ public class GameSetups
         GameSetup.size = 27;
         GameSetup.safeDistance = 20;
         GameSetup.enemyAmount = 40;
-        GameSetup.torchAmount = 100;
+        GameSetup.torchAmount = 70;
         GameSetup.bulletAmount = 200;
         GameSetup.hammerLife = 3;
     }
@@ -43,7 +43,7 @@ public class GameSetups
         GameSetup.size = 41;
         GameSetup.safeDistance = 20;
         GameSetup.enemyAmount = 100;
-        GameSetup.torchAmount = 200;
+        GameSetup.torchAmount = 160;
         GameSetup.bulletAmount = 600;
         GameSetup.hammerLife = 3;
     }

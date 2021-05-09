@@ -22,7 +22,36 @@ public class GameController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Cup"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            if (GameSetup.isSurvival)
+            {
+                string currentDifficulty = GameSetup.gameType;
+
+                if (currentDifficulty.Equals("easy")) {
+                    GameSetups.SetMedium();
+                } 
+                else if (currentDifficulty.Equals("medium")) {
+                    GameSetups.SetHard();
+                } 
+                else if (currentDifficulty.Equals("hard")) {
+                    GameSetups.SetExtreme();
+                }                
+                else if (currentDifficulty.Equals("extreme")) {  
+                    OnGameFinished(); 
+                }
+              
+                Debug.Log(currentDifficulty + " " + GameSetup.gameType);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+            else
+            {
+                OnGameFinished();
+            }
+            
         }
+    }
+
+    private void OnGameFinished()
+    {
+        Debug.Log("Game finished");
     }
 }

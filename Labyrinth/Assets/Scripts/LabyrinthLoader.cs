@@ -18,7 +18,7 @@ public class LabyrinthLoader : MonoBehaviour
     void Start()
     {
         InitializeDefaultData();
-      //  Debug.LogError(GameSetup.bulletAmount);
+        //Debug.LogError(GameSetup.bulletAmount);
         if (repositionPlayer)
         {
             player.transform.position = new Vector3(2, 1, 2);
