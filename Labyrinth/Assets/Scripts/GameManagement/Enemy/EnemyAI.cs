@@ -12,6 +12,7 @@ public class EnemyAI : MonoBehaviour
     private Laser LaserScript;
     public float MobDistanceRun = 4.0f;
     private bool rotate;
+    public ParticleSystem dyingEffect;
     System.Random rng = new System.Random();
 
 
@@ -51,6 +52,7 @@ public class EnemyAI : MonoBehaviour
         currentHealth -= bulletStrength;
         if (currentHealth <= 0f)
         {
+            Instantiate(dyingEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
