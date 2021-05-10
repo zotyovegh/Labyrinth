@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2838320076687553904}
   - component: {fileID: 3199895344290418766}
   - component: {fileID: 1795496074972704242}
+  - component: {fileID: 1128934863517074308}
   m_Layer: 0
   m_Name: CollapseEffect
   m_TagString: Untagged
@@ -4754,6 +4755,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &1128934863517074308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161846087219734328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 010f4d4d02ece4442b6092bfcec423fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 5
 --- !u!1 &4477579181215113248
 GameObject:
   m_ObjectHideFlags: 0
@@ -4800,7 +4814,7 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -5360,7 +5374,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.6
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -5417,7 +5431,7 @@ ParticleSystem:
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 1
+    radiusThickness: 0.3
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
@@ -5500,7 +5514,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 0.7
       mode: 0
       spread: 0
       speed:
@@ -5802,13 +5816,13 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 1
+          time: 0.82751465
           value: 0
-          inSlope: -2.5793178
-          outSlope: -2.5793178
+          inSlope: -1.1158834
+          outSlope: -1.1158834
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.12681931
+          inWeight: 0.11838736
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2

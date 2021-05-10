@@ -135,5 +135,5 @@ MonoBehaviour:
   torchPrefab: {fileID: 5415236246820229699, guid: a045955e60c62ad4fac08fba71b63668,
     type: 3}
   torchInHand: {fileID: 0}
-  collapseEffect: {fileID: 6667439052960351124, guid: 0ddbd14cc14fb2f4aba0b8fb5e305f2b,
+  collapseEffect: {fileID: 3199895344290418766, guid: d502966723310194382e3318b4d28093,
     type: 3}
