@@ -11,6 +11,9 @@ public class EnemyAI : MonoBehaviour
     public GameObject Laser;
     private Laser LaserScript;
     public float MobDistanceRun = 4.0f;
+    private bool rotate;
+    System.Random rng = new System.Random();
+
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +21,8 @@ public class EnemyAI : MonoBehaviour
         Mob = GetComponent<NavMeshAgent>();
         LaserScript = Laser.GetComponent<Laser>();
         Player = GameObject.Find("Player");
+
+        rotate = rng.Next(0, 2) > 0;
     }
 
     // Update is called once per frame
@@ -31,7 +36,7 @@ public class EnemyAI : MonoBehaviour
         }
         if (!LaserScript.Enemyfound)
         {
-            transform.Rotate(new Vector3(30, 30, 35) * Time.deltaTime);  
+            transform.Rotate(new Vector3(0, rotate ? -40 : 40, 0) * Time.deltaTime);  
         }
         else
         {            
