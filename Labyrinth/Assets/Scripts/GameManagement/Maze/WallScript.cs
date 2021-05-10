@@ -22,6 +22,8 @@ public class WallScript : MonoBehaviour
     public GameObject torchPrefab;
     public GameObject torchInHand;
 
+    public ParticleSystem collapseEffect;
+
     void Start()
     {
         torchInHand = GameObject.Find("TorchInHand");
@@ -85,6 +87,12 @@ public class WallScript : MonoBehaviour
             HandleTorchDestroy();
             Destroy(ObjectWest);
         }
+    }
+
+    internal void DestroyWall()
+    {
+        Instantiate(collapseEffect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 
     private void HandleTorchPlacement()

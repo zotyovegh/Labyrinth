@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 876cfa297de33f34c8c15b460806421d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMapEdgeElement: 0
   torchNorth: 0
   torchEast: 0
   torchSouth: 0
@@ -132,4 +133,7 @@ MonoBehaviour:
   ObjectSouth: {fileID: 0}
   ObjectWest: {fileID: 0}
   torchPrefab: {fileID: 5415236246820229699, guid: a045955e60c62ad4fac08fba71b63668,
+    type: 3}
+  torchInHand: {fileID: 0}
+  collapseEffect: {fileID: 6667439052960351124, guid: 0ddbd14cc14fb2f4aba0b8fb5e305f2b,
     type: 3}

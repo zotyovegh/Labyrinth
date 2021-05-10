@@ -47,7 +47,8 @@ public class HammerController : MonoBehaviour
             if (wallScript.ObjectEast) DestroyTorchOnWall(wallScript.ObjectEast, wallScript);
             if (wallScript.ObjectSouth) DestroyTorchOnWall(wallScript.ObjectSouth, wallScript);
             if (wallScript.ObjectWest) DestroyTorchOnWall(wallScript.ObjectWest, wallScript);
-            Destroy(wall);
+
+            wallScript.DestroyWall();
             GameSetup.hammerLife--;
             if (GameSetup.hammerLife == 0) {
                 Destroy(gameObject);                    
