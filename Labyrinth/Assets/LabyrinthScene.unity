@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1487,7 +1487,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &766418018
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3236,10 +3236,10 @@ MonoBehaviour:
     type: 3}
   cup: {fileID: 7021819050958281906, guid: 5a3bbcb8576c4144d8d7fff12efe6f7b, type: 3}
   gridSpacingOffset: 1
-  safeDistance: 10
-  enemyAmount: 100
-  mazeRows: 41
-  mazeCols: 41
+  safeDistance: 0
+  enemyAmount: 0
+  mazeRows: 15
+  mazeCols: 15
   repositionPlayer: 1
 --- !u!4 &1829671767
 Transform:

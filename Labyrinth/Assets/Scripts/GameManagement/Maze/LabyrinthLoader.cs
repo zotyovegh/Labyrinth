@@ -35,19 +35,24 @@ public class LabyrinthLoader : MonoBehaviour
 
     private void InitializeDefaultData()
     {
+        if (GameSetup.gameType == null)
+        {
+            GameSetup.torchAmount = -1;
+            GameSetup.hammerLife = 100;
+            GameSetup.bulletAmount = 100;
+            GameSetup.size = mazeRows;
+            GameSetup.safeDistance = safeDistance;
+        }
         if(GameSetup.size != 0)
         {
             mazeRows = GameSetup.size;
             mazeCols = GameSetup.size;
-        }
-        if (GameSetup.enemyAmount != 0)
-        {
-            enemyAmount = GameSetup.enemyAmount;
-        }
+        }         
         if (GameSetup.safeDistance != 0)
         {
             safeDistance = GameSetup.safeDistance;
         }
+        enemyAmount = GameSetup.enemyAmount;
     }
 
     private void InitializeCup(MazeCell finalCell)
