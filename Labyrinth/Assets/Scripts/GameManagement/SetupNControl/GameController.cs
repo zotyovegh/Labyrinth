@@ -24,7 +24,7 @@ public class GameController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Cup"))
         {
-            if (!GameSetup.isSurvival) //!!!!!!!!!!!!
+            if (GameSetup.isSurvival) 
             {
                 string currentDifficulty = GameSetup.gameType;
 
@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour
                 else if (currentDifficulty.Equals("hard")) {
                     GameSetups.SetExtreme();
                 }                
-                else if (currentDifficulty.Equals("extreme")) {  
+                else if (currentDifficulty.Equals("extreme") || currentDifficulty.Equals("custom")) {  
                     OnGameFinished(); 
                 }
 
