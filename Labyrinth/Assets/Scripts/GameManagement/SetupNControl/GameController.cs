@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
+        if (GameSetup.isFinished) return;
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
