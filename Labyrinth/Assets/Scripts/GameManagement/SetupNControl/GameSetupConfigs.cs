@@ -47,12 +47,9 @@ public class GameSetups
         GameSetup.bulletAmount = 600;
         GameSetup.hammerLife = 3;
     }
-    public class CustomSave{
-        public int size, safeDistance, enemyAmount, torchAmount, bulletAmount, hammerLife;
-    }
 
-   
-    public static CustomSave savedCustomSettings = new CustomSave();
+    public static CustomSetup savedCustomSetup;
+
     public static void SetCustom(string size, string safeDistance, string enemyAmount, string torchAmount, string bulletAmount, string hammerLife)
     {
         GameSetup.gameType = "custom";
@@ -64,27 +61,6 @@ public class GameSetups
         GameSetup.bulletAmount = bulletAmount.Equals("∞") ? -1 : int.Parse(bulletAmount);
         GameSetup.hammerLife = int.Parse(hammerLife);
 
-
-        savedCustomSettings.size = GameSetup.size;
-        savedCustomSettings.safeDistance = GameSetup.safeDistance;
-        savedCustomSettings.enemyAmount = GameSetup.enemyAmount;
-        savedCustomSettings.torchAmount = GameSetup.torchAmount;
-        savedCustomSettings.bulletAmount = GameSetup.bulletAmount;
-        savedCustomSettings.hammerLife = GameSetup.hammerLife;
+        savedCustomSetup = new CustomSetup(GameSetup.size, GameSetup.safeDistance, GameSetup.enemyAmount, GameSetup.torchAmount, GameSetup.bulletAmount, GameSetup.hammerLife);
     }
-
-    public static void InstallSavedCustom()
-    {
-        GameSetup.size = savedCustomSettings.size;
-        GameSetup.safeDistance = savedCustomSettings.safeDistance;
-        GameSetup.enemyAmount = savedCustomSettings.enemyAmount;
-        GameSetup.torchAmount = savedCustomSettings.torchAmount;
-        GameSetup.bulletAmount = savedCustomSettings.bulletAmount;
-        GameSetup.hammerLife = savedCustomSettings.hammerLife;
-    }
-
-   
-
-
-
 }

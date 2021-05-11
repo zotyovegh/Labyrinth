@@ -7,7 +7,6 @@ public class FinishedMenuController : MonoBehaviour
 {
     public void Restart()
     {
-        Debug.LogError("Current " + GameSetup.gameType);
         if (GameSetup.isSurvival) { 
             GameSetups.SetEasy(); 
         }
@@ -17,7 +16,7 @@ public class FinishedMenuController : MonoBehaviour
             if (GameSetup.gameType.Equals("medium")) GameSetups.SetMedium();
             if (GameSetup.gameType.Equals("hard")) GameSetups.SetHard();
             if (GameSetup.gameType.Equals("extreme")) GameSetups.SetExtreme();
-            if (GameSetup.gameType.Equals("custom")) GameSetups.InstallSavedCustom();
+            if (GameSetup.gameType.Equals("custom")) GameSetups.savedCustomSetup.InstallSavedCustom();
         }
         
         GameSetup.isFinished = false;
