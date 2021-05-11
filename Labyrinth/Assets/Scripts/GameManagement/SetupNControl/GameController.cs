@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     public CharacterController controller;
+    public GameFinishedController finishedController;
 
     public float speed = 12f;
 
@@ -22,7 +23,7 @@ public class GameController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Cup"))
         {
-            if (GameSetup.isSurvival)
+            if (!GameSetup.isSurvival) //!!!!!!!!!!!!
             {
                 string currentDifficulty = GameSetup.gameType;
 
@@ -38,8 +39,7 @@ public class GameController : MonoBehaviour
                 else if (currentDifficulty.Equals("extreme")) {  
                     OnGameFinished(); 
                 }
-              
-                Debug.Log(currentDifficulty + " " + GameSetup.gameType);
+
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
             else
@@ -52,6 +52,7 @@ public class GameController : MonoBehaviour
 
     private void OnGameFinished()
     {
+        finishedController.Display();
         Debug.Log("Game finished");
     }
 }
