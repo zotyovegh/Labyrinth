@@ -882,6 +882,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314741277}
   m_CullTransparentMesh: 0
+--- !u!95 &378550107 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8020140836835979248, guid: 8861a8a1fd498044ca9787f31dff4538,
+    type: 3}
+  m_PrefabInstance: {fileID: 7660737086136520361}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &459952939
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -956,6 +962,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f599499e46b50f14d8d3556d9af2a127, type: 3}
+--- !u!20 &538321227 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 9078506965684076805, guid: 8861a8a1fd498044ca9787f31dff4538,
+    type: 3}
+  m_PrefabInstance: {fileID: 7660737086136520361}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &578071733
 GameObject:
   m_ObjectHideFlags: 0
@@ -4685,10 +4697,25 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4462402514500127180, guid: 8861a8a1fd498044ca9787f31dff4538,
+    - target: {fileID: 4189801092988742564, guid: 8861a8a1fd498044ca9787f31dff4538,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 538321227}
+    - target: {fileID: 4189801092988742564, guid: 8861a8a1fd498044ca9787f31dff4538,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 378550107}
+    - target: {fileID: 4413846093340600274, guid: 8861a8a1fd498044ca9787f31dff4538,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462402514500127180, guid: 8861a8a1fd498044ca9787f31dff4538,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4998094214993496247, guid: 8861a8a1fd498044ca9787f31dff4538,
         type: 3}
@@ -4720,6 +4747,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8043259658138828278, guid: 8861a8a1fd498044ca9787f31dff4538,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 378550107}
     - target: {fileID: 9078506965122193397, guid: 8861a8a1fd498044ca9787f31dff4538,
         type: 3}
       propertyPath: m_LocalScale.x

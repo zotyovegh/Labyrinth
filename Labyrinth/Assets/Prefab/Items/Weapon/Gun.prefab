@@ -93,56 +93,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &3605511356335773171
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3742654730651119076}
-  - component: {fileID: 3508168882831131385}
-  m_Layer: 0
-  m_Name: Shoot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3742654730651119076
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3605511356335773171}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.537, z: 1.6651}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5884386279914037502}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3508168882831131385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3605511356335773171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fd0782def0453849a673673f3fa876a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  bulletStrength: 20
-  flash: {fileID: 241939423136155630}
-  bleedingEffect: {fileID: 2011739751880030994, guid: 58416ee57d30d8949b4bff1db3563847,
-    type: 3}
-  smokeEffect: {fileID: 6898835316015981944, guid: cb93a890f57a3474d816a59f7d72bf38,
-    type: 3}
 --- !u!1 &4611152290044829244
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,6 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5884386279914037502}
+  - component: {fileID: 7283951091824301227}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -174,11 +125,30 @@ Transform:
   - {fileID: 6619680740184007032}
   - {fileID: 7983472564868443518}
   - {fileID: 7962145110586668914}
-  - {fileID: 3742654730651119076}
   - {fileID: 473988155690110561}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7283951091824301227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4611152290044829244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fd0782def0453849a673673f3fa876a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  bulletStrength: 20
+  flash: {fileID: 241939423136155630}
+  bleedingEffect: {fileID: 2011739751880030994, guid: 58416ee57d30d8949b4bff1db3563847,
+    type: 3}
+  smokeEffect: {fileID: 6898835316015981944, guid: cb93a890f57a3474d816a59f7d72bf38,
+    type: 3}
+  animator: {fileID: 0}
 --- !u!1 &4652439423946540817
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +273,7 @@ Transform:
   m_LocalScale: {x: 0.063250065, y: 0.063250065, z: 0.15210171}
   m_Children: []
   m_Father: {fileID: 5884386279914037502}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &241939423136155630
 ParticleSystem:

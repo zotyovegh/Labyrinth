@@ -7,7 +7,12 @@ public class ShootingManagement : MonoBehaviour
     public ParticleSystem flash;
     public GameObject bleedingEffect;
     public GameObject smokeEffect;
+    public Animator animator;
 
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
     void Update()
     {
         if(Input.GetMouseButtonDown(0))
@@ -17,7 +22,9 @@ public class ShootingManagement : MonoBehaviour
             if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
             {
                 EnemyAI target = hit.transform.root.GetComponent<EnemyAI>();
-                if(target != null)
+                //anim
+                animator.SetTrigger("isShooting");
+                if (target != null)
                 {
                     target.ReceiveBullet(bulletStrength);
                     GameObject obj = Instantiate(bleedingEffect, hit.point, Quaternion.LookRotation(hit.normal));
