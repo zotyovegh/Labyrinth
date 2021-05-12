@@ -1736,6 +1736,13 @@ MonoBehaviour:
   selectableTag: Selectable
   clickType: -1
   destroyDistance: 10
+  animator: {fileID: 916694673}
+--- !u!95 &916694673 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4396926055329503078, guid: 8861a8a1fd498044ca9787f31dff4538,
+    type: 3}
+  m_PrefabInstance: {fileID: 7660737086136520361}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &936612330
 GameObject:
   m_ObjectHideFlags: 0
@@ -4677,6 +4684,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462402514500127180, guid: 8861a8a1fd498044ca9787f31dff4538,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998094214993496247, guid: 8861a8a1fd498044ca9787f31dff4538,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998094214993496247, guid: 8861a8a1fd498044ca9787f31dff4538,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998094214993496247, guid: 8861a8a1fd498044ca9787f31dff4538,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998094214993496247, guid: 8861a8a1fd498044ca9787f31dff4538,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998094214993496247, guid: 8861a8a1fd498044ca9787f31dff4538,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6975787320783626547, guid: 8861a8a1fd498044ca9787f31dff4538,
         type: 3}
