@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Cup"))
+        if (other.gameObject.CompareTag("Cup") || other.gameObject.CompareTag("Enemy"))
         {
             if (GameSetup.isSurvival) 
             {
@@ -38,21 +38,22 @@ public class GameController : MonoBehaviour
                     GameSetups.SetExtreme();
                 }                
                 else if (currentDifficulty.Equals("extreme") || currentDifficulty.Equals("custom")) {  
-                    OnGameFinished(); 
+                    OnGameFinished(other.gameObject.tag); 
                 }
 
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
             else
             {
-                OnGameFinished();
-            }
-            
+                OnGameFinished(other.gameObject.tag);
+            }            
         }
     }
 
-    private void OnGameFinished()
+    private void OnGameFinished(string result)
     {
+        if (result.Equals("Cup")) finishedController.resultText.text = "YOU WON!";
+        if (result.Equals("Enemy")) finishedController.resultText.text = "GAME OVER!";
         finishedController.Display();
         Debug.Log("Game finished");
     }

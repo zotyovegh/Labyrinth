@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 public class GameFinishedController : MonoBehaviour
 {
     public GameObject gamePlayScreen;
-   public void Display()
+    public TMPro.TextMeshProUGUI resultText;
+    public void Display()
     {
         Cursor.lockState = CursorLockMode.None;
         GameSetup.isFinished = true;

@@ -10,6 +10,7 @@ TagManager:
   - Test2
   - Torch
   - Cup
+  - Enemy
   layers:
   - Default
   - TransparentFX
