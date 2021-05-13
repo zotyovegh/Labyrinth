@@ -69,8 +69,6 @@ public class PlacementController : MonoBehaviour
             }
         //anim
         animator.SetTrigger("isPlacing");
-
-
     }
 
     private string GetDirection(Transform transform, RaycastHit hitInfo)
