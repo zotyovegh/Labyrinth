@@ -28,7 +28,7 @@ public class HammerController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hitInfo))
         {
-            if (hitInfo.transform.gameObject.CompareTag(selectableTag) && hitInfo.distance < destroyDistance)
+            if (hitInfo.transform.gameObject.CompareTag(selectableTag) && hitInfo.distance < destroyDistance && !GameSetup.isFinished)
             {
                 ReleaseIfClicked();
                 var wall = hitInfo.transform.gameObject;
@@ -57,7 +57,7 @@ public class HammerController : MonoBehaviour
 
             wallScript.DestroyWall();
             //anim
-            animator.SetTrigger("isSwinging");
+             animator.SetTrigger("isSwinging");
 
             GameSetup.hammerLife--;
             if (GameSetup.hammerLife == 0) {

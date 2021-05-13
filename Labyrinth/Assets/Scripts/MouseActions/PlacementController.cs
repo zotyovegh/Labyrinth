@@ -50,7 +50,7 @@ public class PlacementController : MonoBehaviour
 
     private void TorchAction(string direction, WallScript wallScript, bool v)
     {
-        if (v && GameSetup.torchAmount == 0) return;
+        if (v && GameSetup.torchAmount == 0 && GameSetup.isFinished) return;
             if (direction == "north")
             {
                 wallScript.torchNorth = v;

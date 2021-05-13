@@ -15,7 +15,7 @@ public class ShootingManagement : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && !GameSetup.isFinished)
         {
             flash.Play();
             RaycastHit hit;
