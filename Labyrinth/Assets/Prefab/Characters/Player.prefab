@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6998695197932876650}
-  - component: {fileID: 34348361763325784}
   m_Layer: 0
   m_Name: TorchPlacement
   m_TagString: Untagged
@@ -27,25 +26,11 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 3997756414997151153}
   m_Father: {fileID: 243710136318415572}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &34348361763325784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006849202352358939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cce4b773df2a724b812c9d1fbbcb680, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectableTag: Selectable
-  clickType: -1
-  placementDistance: 10
 --- !u!1 &3185944210460315643
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,6 +78,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedItem: 0
+--- !u!95 &7909984661115564383
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3997756414997151157}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b0dd29947bf97554ca52485a8f84f494, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4952942163560484635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3997756414997151157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cce4b773df2a724b812c9d1fbbcb680, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectableTag: Selectable
+  clickType: -1
+  placementDistance: 10
+  animator: {fileID: 7909984661115564383}
 --- !u!1 &4413846093340600274
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,7 +122,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 243710136318415572}
-  - component: {fileID: 6545940951643139602}
   m_Layer: 0
   m_Name: TorchHandler
   m_TagString: Untagged
@@ -121,30 +140,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3997756414997151153}
   - {fileID: 6998695197932876650}
   m_Father: {fileID: 4920997019954230985}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &6545940951643139602
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4413846093340600274}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b0dd29947bf97554ca52485a8f84f494, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!95 &4396926055329503078
 Animator:
   serializedVersion: 3
@@ -586,7 +585,7 @@ PrefabInstance:
     - target: {fileID: 4611152290044829244, guid: 8054d2c070746324ea91908349b2b5ba,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5884386279914037502, guid: 8054d2c070746324ea91908349b2b5ba,
         type: 3}
@@ -687,7 +686,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 243710136318415572}
+    m_TransformParent: {fileID: 6998695197932876650}
     m_Modifications:
     - target: {fileID: 188318527807597894, guid: a045955e60c62ad4fac08fba71b63668,
         type: 3}
@@ -747,7 +746,7 @@ PrefabInstance:
     - target: {fileID: 5415236246820229703, guid: a045955e60c62ad4fac08fba71b63668,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.3225001
+      value: 0.32250017
       objectReference: {fileID: 0}
     - target: {fileID: 5415236246820229703, guid: a045955e60c62ad4fac08fba71b63668,
         type: 3}
@@ -816,6 +815,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d88c0022ce79ab94aa20173f5e505622, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a045955e60c62ad4fac08fba71b63668, type: 3}
+--- !u!1 &3997756414997151157 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5415236246820229699, guid: a045955e60c62ad4fac08fba71b63668,
+    type: 3}
+  m_PrefabInstance: {fileID: 8961084550134083574}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3997756414997151153 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5415236246820229703, guid: a045955e60c62ad4fac08fba71b63668,

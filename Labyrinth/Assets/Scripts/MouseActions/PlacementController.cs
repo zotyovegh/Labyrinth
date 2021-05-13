@@ -8,6 +8,11 @@ public class PlacementController : MonoBehaviour
     public string selectableTag = "Selectable";
     public float clickType = -1;
     public int placementDistance = 10;
+    public Animator animator;
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     void Update()
     {        
@@ -62,8 +67,10 @@ public class PlacementController : MonoBehaviour
             {
                 wallScript.torchWest = v;
             }
-        
-        
+        //anim
+        animator.SetTrigger("isPlacing");
+
+
     }
 
     private string GetDirection(Transform transform, RaycastHit hitInfo)
