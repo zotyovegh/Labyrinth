@@ -288,7 +288,6 @@ GameObject:
   - component: {fileID: 9078506965156209443}
   - component: {fileID: 9078506965156209468}
   - component: {fileID: 9078506965156209442}
-  - component: {fileID: -8307805601164007336}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -343,23 +342,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 9078506965156209468}
+  finishedController: {fileID: 0}
   speed: 5
---- !u!54 &-8307805601164007336
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9078506965156209469}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &9078506965684076807
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,6 +547,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8844230467758907653, guid: 7b2ae15fed6ddfa4ba12a63bc4714fff,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 4396926055329503078}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b2ae15fed6ddfa4ba12a63bc4714fff, type: 3}
 --- !u!1 &4462402514500127180 stripped
@@ -669,6 +658,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7283951091824301227, guid: 8054d2c070746324ea91908349b2b5ba,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 9078506965684076805}
+    - target: {fileID: 7283951091824301227, guid: 8054d2c070746324ea91908349b2b5ba,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 8020140836835979248}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8054d2c070746324ea91908349b2b5ba, type: 3}
 --- !u!1 &6975787320783626547 stripped
