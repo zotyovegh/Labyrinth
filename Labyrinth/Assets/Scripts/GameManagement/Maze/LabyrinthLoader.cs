@@ -12,17 +12,11 @@ public class LabyrinthLoader : MonoBehaviour
     public GameObject cup;
     public float gridSpacingOffset = 1f;
     public int safeDistance, enemyAmount, mazeRows, mazeCols;
-    public bool repositionPlayer = false;
 
     // Start is called before the first frame update
     void Start()
     {
         InitializeDefaultData();
-        //Debug.LogError(GameSetup.bulletAmount);
-        if (repositionPlayer)
-        {
-            player.transform.position = new Vector3(2, 1, 2);
-        }        
 
         MazeCell[,] cells = new MazeCell[mazeRows, mazeCols];
         InitializeGrid(cells);
