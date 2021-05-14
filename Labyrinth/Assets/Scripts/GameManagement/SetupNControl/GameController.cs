@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Cup") || other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Cup"))
         {
             if (GameSetup.isSurvival) 
             {
@@ -47,6 +47,10 @@ public class GameController : MonoBehaviour
             {
                 OnGameFinished(other.gameObject.tag);
             }            
+        }else if (other.gameObject.CompareTag("Enemy"))
+        {
+            //DIED
+            OnGameFinished(other.gameObject.tag);
         }
     }
 
