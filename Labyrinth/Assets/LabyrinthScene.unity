@@ -409,6 +409,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3689538677096705849, guid: 8861a8a1fd498044ca9787f31dff4538,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9078506965156209442, guid: 8861a8a1fd498044ca9787f31dff4538,
         type: 3}
       propertyPath: finishedController
@@ -417,7 +422,7 @@ PrefabInstance:
     - target: {fileID: 9078506965156209443, guid: 8861a8a1fd498044ca9787f31dff4538,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9078506965156209443, guid: 8861a8a1fd498044ca9787f31dff4538,
         type: 3}
@@ -2714,7 +2719,7 @@ RectTransform:
   - {fileID: 1901477033}
   - {fileID: 766418018}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3287,7 +3292,6 @@ MonoBehaviour:
   enemyAmount: 0
   mazeRows: 15
   mazeCols: 15
-  repositionPlayer: 1
 --- !u!4 &1829671767
 Transform:
   m_ObjectHideFlags: 0
