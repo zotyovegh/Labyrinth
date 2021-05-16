@@ -6,11 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
+    [SerializeField]
     public TMPro.TextMeshProUGUI sizeSlider;
+    [SerializeField]
     public TMPro.TextMeshProUGUI safeDistanceSlider;
+    [SerializeField]
     public TMPro.TextMeshProUGUI torchAmountSlider;
+    [SerializeField]
     public TMPro.TextMeshProUGUI enemyAmountSlider;
+    [SerializeField]
     public TMPro.TextMeshProUGUI hammerLifeSlider;
+    [SerializeField]
     public TMPro.TextMeshProUGUI bulletAmountSlider;
 
     public void PlaySurvival()

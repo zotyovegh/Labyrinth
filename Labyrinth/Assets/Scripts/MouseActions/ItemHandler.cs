@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ItemHandler : MonoBehaviour
 {
+    [SerializeField]
     public int selectedItem = 0;
 
     // Start is called before the first frame update

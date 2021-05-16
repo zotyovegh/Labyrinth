@@ -5,13 +5,21 @@ using UnityEngine;
 
 public class LabyrinthLoader : MonoBehaviour
 {
+    [SerializeField]
     public GameObject cell;
+    [SerializeField]
     public GameObject enemy;
+    [SerializeField]
     public GameObject player;
+    [SerializeField]
     public GameObject cellFloor;
-    public GameObject cup;
-    public float gridSpacingOffset = 1f;
-    public int safeDistance, enemyAmount, mazeRows, mazeCols;
+    [SerializeField]
+    public GameObject cup;    
+    [SerializeField]
+    public int mazeRows, mazeCols;
+
+    private int safeDistance, enemyAmount;
+    private float gridSpacingOffset = 1f;
 
     // Start is called before the first frame update
     void Start()

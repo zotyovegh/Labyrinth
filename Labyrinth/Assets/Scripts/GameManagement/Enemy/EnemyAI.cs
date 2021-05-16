@@ -5,16 +5,20 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    private NavMeshAgent Mob;
+    [SerializeField]
     public float currentHealth = 100f;
-    private GameObject Player;
+    [SerializeField]
     public GameObject Laser;
-    private Laser LaserScript;
-    public float MobDistanceRun = 4.0f;
-    private bool rotate;
+    [SerializeField]
+    public float MobDistanceRun = 4.0f;    
+    [SerializeField]
     public ParticleSystem dyingEffect;
-    System.Random rng = new System.Random();
 
+    private System.Random rng = new System.Random();
+    private bool rotate;
+    private Laser LaserScript;
+    private GameObject Player;
+    private NavMeshAgent Mob;
 
     // Start is called before the first frame update
     void Start()

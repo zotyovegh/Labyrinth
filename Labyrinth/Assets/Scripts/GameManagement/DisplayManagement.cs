@@ -7,15 +7,23 @@ using UnityEngine.UI;
 public class DisplayManagement : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField]
     public TextMeshProUGUI torchAmount;
+    [SerializeField]
     public TextMeshProUGUI hammerLife;
+    [SerializeField]
     public TextMeshProUGUI bulletAmount;
-
+    [SerializeField]
     public Image torchBg1;
+    [SerializeField]
     public Image torchBg2;
+    [SerializeField]
     public Image hammerBg1;
+    [SerializeField]
     public Image hammerBg2;
+    [SerializeField]
     public Image gunBg1;
+    [SerializeField]
     public Image gunBg2;
 
     private Color defColor = new Color(255, 255, 255, 0.05f);

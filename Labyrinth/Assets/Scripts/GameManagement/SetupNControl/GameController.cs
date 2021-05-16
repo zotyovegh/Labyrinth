@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    [SerializeField]
     public CharacterController controller;
+    [SerializeField]
     public GameFinishedController finishedController;
-
+    [SerializeField]
     public float speed = 12f;
 
     void Update()

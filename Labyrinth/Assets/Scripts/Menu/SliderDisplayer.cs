@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class SliderDisplayer : MonoBehaviour
 {
+    [SerializeField]
     TMPro.TextMeshProUGUI textToUpdate;
+    [SerializeField]
     public Slider slider;
     public int infiniteValue;
     public float value;

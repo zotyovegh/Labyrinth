@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class LevelDisplayer : MonoBehaviour
 {
+    [SerializeField]
     public TMPro.TextMeshProUGUI displayer;
 
     private float fadeTime;

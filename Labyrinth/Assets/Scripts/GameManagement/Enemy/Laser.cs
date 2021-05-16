@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Laser : MonoBehaviour
-{
+{    
+    [SerializeField]
+    public GameObject Nose;
+
     private LineRenderer lr;
-    public GameObject Enemy;
     public bool Enemyfound = false;
     public float timeValue;
     public float timeDefault;
@@ -22,10 +24,10 @@ public class Laser : MonoBehaviour
     void Update()
     {
         
-        lr.SetPosition(0, Enemy.transform.position);
+        lr.SetPosition(0, Nose.transform.position);
         RaycastHit hit;
 
-        if (Physics.Raycast(Enemy.transform.position, Enemy.transform.forward, out hit))
+        if (Physics.Raycast(Nose.transform.position, Nose.transform.forward, out hit))
         {
             if (hit.collider)
             {
@@ -38,7 +40,7 @@ public class Laser : MonoBehaviour
                 lr.SetPosition(1, hit.point);
             }
         }
-        else lr.SetPosition(1, Enemy.transform.forward*50000);
+        else lr.SetPosition(1, Nose.transform.forward*50000);
         Timer();
     }
 

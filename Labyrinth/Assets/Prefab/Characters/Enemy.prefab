@@ -598,7 +598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a6b80310d3f1984d97ef82a977ef6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 4417830355404410242}
+  Nose: {fileID: 4417830355404410242}
   Enemyfound: 0
   timeValue: 0
   timeDefault: 3

@@ -2,11 +2,17 @@
 
 public class ShootingManagement : MonoBehaviour
 {
+    [SerializeField]
     public Camera cam;
+    [SerializeField]
     public float bulletStrength = 20f;
+    [SerializeField]
     public ParticleSystem flash;
+    [SerializeField]
     public GameObject bleedingEffect;
+    [SerializeField]
     public GameObject smokeEffect;
+    [SerializeField]
     public Animator animator;
 
     private void Start()

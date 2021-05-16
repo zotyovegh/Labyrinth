@@ -5,9 +5,13 @@ using UnityEngine;
 
 public class PlacementController : MonoBehaviour
 {
+    [SerializeField]
     public string selectableTag = "Selectable";
+    [SerializeField]
     public float clickType = -1;
+    [SerializeField]
     public int placementDistance = 10;
+    [SerializeField]
     public Animator animator;
     private void Start()
     {
