@@ -97,12 +97,16 @@ public class WallScript : MonoBehaviour
 
     private void HandleTorchPlacement()
     {
+        //sound
+        SoundManager.PlaySound("placeTorch");
         GameSetup.torchAmount--;
         if (GameSetup.torchAmount == 0)  torchInHand.SetActive(false); 
     }
 
     private void HandleTorchDestroy()
     {
+        //sound
+        SoundManager.PlaySound("destroyTorch");
         if (GameSetup.torchAmount == 0) torchInHand.SetActive(true);  
         GameSetup.torchAmount++;
     }

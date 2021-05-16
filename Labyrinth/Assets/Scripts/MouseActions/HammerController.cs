@@ -60,8 +60,10 @@ public class HammerController : MonoBehaviour
             if (wallScript.ObjectWest) DestroyTorchOnWall(wallScript.ObjectWest, wallScript);
 
             wallScript.DestroyWall();
+            //sound
+            SoundManager.PlaySound("collapse");
             //anim
-             animator.SetTrigger("isSwinging");
+            animator.SetTrigger("isSwinging");
 
             GameSetup.hammerLife--;
             if (GameSetup.hammerLife == 0) {

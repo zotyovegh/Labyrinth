@@ -70,7 +70,8 @@ public class PlacementController : MonoBehaviour
             else if (direction == "west")
             {
                 wallScript.torchWest = v;
-            }
+            }        
+
         //anim
         animator.SetTrigger("isPlacing");
     }

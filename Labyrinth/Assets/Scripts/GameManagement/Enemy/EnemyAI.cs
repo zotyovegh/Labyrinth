@@ -56,6 +56,8 @@ public class EnemyAI : MonoBehaviour
         currentHealth -= bulletStrength;
         if (currentHealth <= 0f)
         {
+            //sound
+            SoundManager.PlaySound("die");
             Instantiate(dyingEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

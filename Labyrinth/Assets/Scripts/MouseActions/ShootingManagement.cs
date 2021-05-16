@@ -28,6 +28,8 @@ public class ShootingManagement : MonoBehaviour
             if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
             {
                 EnemyAI target = hit.transform.root.GetComponent<EnemyAI>();
+                //sound
+                SoundManager.PlaySound("shoot");
                 //anim
                 animator.SetTrigger("isShooting");
                 if (target != null)
