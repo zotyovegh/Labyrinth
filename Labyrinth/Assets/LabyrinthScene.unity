@@ -3390,9 +3390,12 @@ MonoBehaviour:
   player: {fileID: 1272125739}
   cellFloor: {fileID: 2351945735342302445, guid: 49bf9c7a2e7449249be955775b2417eb,
     type: 3}
+  cellCeiling: {fileID: 4582956630713449816, guid: 610440e9e25be2c4089e1bd317535668,
+    type: 3}
   cup: {fileID: 7021819050958281906, guid: 5a3bbcb8576c4144d8d7fff12efe6f7b, type: 3}
   mazeRows: 15
   mazeCols: 15
+  initializeCeiling: 0
 --- !u!4 &1829671767
 Transform:
   m_ObjectHideFlags: 0

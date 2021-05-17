@@ -14,5 +14,6 @@ public class MazeCell
     public GameObject body;
     public MazeCell prev;
     public GameObject floor;
+    public GameObject ceiling;
     public int cellRow, cellCol, position;
 }
