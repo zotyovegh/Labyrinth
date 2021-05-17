@@ -19,6 +19,7 @@ public class EnemyAI : MonoBehaviour
     private Laser LaserScript;
     private GameObject Player;
     private NavMeshAgent Mob;
+    private AudioSource DetectionSound;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class EnemyAI : MonoBehaviour
         Mob = GetComponent<NavMeshAgent>();
         LaserScript = Laser.GetComponent<Laser>();
         Player = GameObject.Find("Player");
+        DetectionSound = GetComponent<AudioSource>();
 
         rotate = rng.Next(0, 2) > 0;
     }
@@ -35,6 +37,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (LaserScript.timeOff)
         {
+            DetectionSound.enabled = false;
             Mob.isStopped = true;
             LaserScript.timeOff = false;
             Mob.ResetPath();
@@ -44,7 +47,8 @@ public class EnemyAI : MonoBehaviour
             transform.Rotate(new Vector3(0, rotate ? -40 : 40, 0) * Time.deltaTime);  
         }
         else
-        {            
+        {
+            DetectionSound.enabled = true;
             Vector3 dirToPlayer = transform.position - Player.transform.position;
             Vector3 newPos = transform.position - dirToPlayer;
             Mob.SetDestination(newPos);         
