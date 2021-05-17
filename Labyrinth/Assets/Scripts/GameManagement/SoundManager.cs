@@ -17,13 +17,14 @@ public class SoundManager : MonoBehaviour
         shoot = Resources.Load<AudioClip>("shoot");
 
         audioSource = GetComponent<AudioSource>();
+        audioSource.volume = 0.1f;
     }
 
     public static void PlaySound(string name)
     {
         switch (name)
         {
-            case "collapse":
+            case "collapse":                
                 audioSource.PlayOneShot(collapse);
                 break;
 
