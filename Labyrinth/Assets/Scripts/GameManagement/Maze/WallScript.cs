@@ -14,10 +14,10 @@ public class WallScript : MonoBehaviour
     public bool torchSouth = false;
     public bool torchWest = false;
 
-    public GameObject ObjectNorth = null;
-    public GameObject ObjectEast = null;
-    public GameObject ObjectSouth = null;
-    public GameObject ObjectWest = null;
+    public GameObject objectNorth = null;
+    public GameObject objectEast = null;
+    public GameObject objectSouth = null;
+    public GameObject objectWest = null;
 
     public GameObject torchPrefab;
     public GameObject torchInHand;
@@ -32,7 +32,7 @@ public class WallScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {        
-        if (torchSouth && ObjectSouth == null)
+        if (torchSouth && objectSouth == null)
         {
             if (GameObject.Find("TorchInHand") != null && GameSetup.torchAmount != 0)
             {
@@ -40,13 +40,13 @@ public class WallScript : MonoBehaviour
                 HandleTorchPlacement();
             }                  
         }
-        else if (!torchSouth && ObjectSouth != null)
+        else if (!torchSouth && objectSouth != null)
         {
             HandleTorchDestroy();
-            Destroy(ObjectSouth);
+            Destroy(objectSouth);
         }
 
-        if (torchEast && ObjectEast == null)
+        if (torchEast && objectEast == null)
         {
             if (GameObject.Find("TorchInHand") != null && GameSetup.torchAmount != 0)
             {
@@ -54,13 +54,13 @@ public class WallScript : MonoBehaviour
                 HandleTorchPlacement();
             }           
         }
-        else if (!torchEast && ObjectEast != null)
+        else if (!torchEast && objectEast != null)
         {
             HandleTorchDestroy();
-            Destroy(ObjectEast);
+            Destroy(objectEast);
         }
 
-        if (torchNorth && ObjectNorth == null)
+        if (torchNorth && objectNorth == null)
         {
             if (GameObject.Find("TorchInHand") != null && GameSetup.torchAmount != 0)
             {
@@ -68,13 +68,13 @@ public class WallScript : MonoBehaviour
                 HandleTorchPlacement();
             }                      
         }
-        else if (!torchNorth && ObjectNorth != null)
+        else if (!torchNorth && objectNorth != null)
         {
             HandleTorchDestroy();
-            Destroy(ObjectNorth);
+            Destroy(objectNorth);
         }
 
-        if (torchWest && ObjectWest == null)
+        if (torchWest && objectWest == null)
         {
             if (GameObject.Find("TorchInHand") != null && GameSetup.torchAmount != 0)
             {
@@ -82,10 +82,10 @@ public class WallScript : MonoBehaviour
                 HandleTorchPlacement();
             }                       
         }
-        else if (!torchWest && ObjectWest != null)
+        else if (!torchWest && objectWest != null)
         {
             HandleTorchDestroy();
-            Destroy(ObjectWest);
+            Destroy(objectWest);
         }
     }
 
@@ -111,35 +111,35 @@ public class WallScript : MonoBehaviour
         GameSetup.torchAmount++;
     }
 
-    void PlaceOnNorth()
+    private void PlaceOnNorth()
     {
         torchPrefab.gameObject.transform.position = transform.position + new Vector3(0, 0, 1);
        torchPrefab.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
-        ObjectNorth = Instantiate(torchPrefab);
-        ObjectNorth.transform.Rotate(35, 0, 0);
+        objectNorth = Instantiate(torchPrefab);
+        objectNorth.transform.Rotate(35, 0, 0);
     }
 
-    void PlaceOnEast()
+    private void PlaceOnEast()
     {
         torchPrefab.gameObject.transform.position = transform.position + new Vector3(1, 0, 0);
         torchPrefab.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
-        ObjectEast = Instantiate(torchPrefab);
-        ObjectEast.transform.Rotate(0, 0, -35);
+        objectEast = Instantiate(torchPrefab);
+        objectEast.transform.Rotate(0, 0, -35);
     }
 
-    void PlaceOnSouth()
+    private void PlaceOnSouth()
     {
         torchPrefab.gameObject.transform.position = transform.position + new Vector3(0, 0, -1);
         torchPrefab.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
-        ObjectSouth = Instantiate(torchPrefab);
-        ObjectSouth.transform.Rotate(-35, 0, 0);
+        objectSouth = Instantiate(torchPrefab);
+        objectSouth.transform.Rotate(-35, 0, 0);
     }
 
-    void PlaceOnWest()
+    private void PlaceOnWest()
     {
         torchPrefab.gameObject.transform.position = transform.position + new Vector3(-1, 0, 0);
         torchPrefab.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
-        ObjectWest = Instantiate(torchPrefab);
-        ObjectWest.transform.Rotate(0, 0, 35);
+        objectWest = Instantiate(torchPrefab);
+        objectWest.transform.Rotate(0, 0, 35);
     }
 }

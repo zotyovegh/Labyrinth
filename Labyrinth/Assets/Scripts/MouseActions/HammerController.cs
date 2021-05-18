@@ -54,10 +54,10 @@ public class HammerController : MonoBehaviour
         {
             WallScript wallScript = wall.GetComponent<WallScript>();
             if (wallScript.isMapEdgeElement) return;
-            if (wallScript.ObjectNorth) DestroyTorchOnWall(wallScript.ObjectNorth, wallScript);  
-            if (wallScript.ObjectEast) DestroyTorchOnWall(wallScript.ObjectEast, wallScript);
-            if (wallScript.ObjectSouth) DestroyTorchOnWall(wallScript.ObjectSouth, wallScript);
-            if (wallScript.ObjectWest) DestroyTorchOnWall(wallScript.ObjectWest, wallScript);
+            if (wallScript.objectNorth) DestroyTorchOnWall(wallScript.objectNorth, wallScript);  
+            if (wallScript.objectEast) DestroyTorchOnWall(wallScript.objectEast, wallScript);
+            if (wallScript.objectSouth) DestroyTorchOnWall(wallScript.objectSouth, wallScript);
+            if (wallScript.objectWest) DestroyTorchOnWall(wallScript.objectWest, wallScript);
 
             wallScript.DestroyWall();
             //sound

@@ -15,8 +15,8 @@ public class GameController : MonoBehaviour
     void Update()
     {
         if (GameSetup.isFinished) return;
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        var x = Input.GetAxis("Horizontal");
+        var z = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * speed * Time.deltaTime);
@@ -28,19 +28,23 @@ public class GameController : MonoBehaviour
         {
             if (GameSetup.isSurvival) 
             {
-                string currentDifficulty = GameSetup.gameType;
+                var currentDifficulty = GameSetup.gameType;
 
-                if (currentDifficulty.Equals("easy")) {
-                    GameSetups.SetMedium();
-                } 
-                else if (currentDifficulty.Equals("medium")) {
-                    GameSetups.SetHard();
-                } 
-                else if (currentDifficulty.Equals("hard")) {
-                    GameSetups.SetExtreme();
-                }                
-                else if (currentDifficulty.Equals("extreme") || currentDifficulty.Equals("custom")) {  
-                    OnGameFinished(other.gameObject.tag); 
+                switch (currentDifficulty)
+                {
+                    case "easy":
+                        GameSetups.SetMedium();
+                        break;
+                    case "medium":
+                        GameSetups.SetHard();
+                        break;
+                    case "hard":
+                        GameSetups.SetExtreme();
+                        break;
+                    case "extreme":
+                    case "custom":
+                        OnGameFinished(other.gameObject.tag);
+                        break;
                 }
 
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -58,8 +62,16 @@ public class GameController : MonoBehaviour
 
     private void OnGameFinished(string result)
     {
-        if (result.Equals("Cup")) finishedController.resultText.text = "YOU WON!";
-        if (result.Equals("Enemy")) finishedController.resultText.text = "GAME OVER!";
+        switch (result)
+        {
+            case "Cup":
+                finishedController.resultText.text = "YOU WON!";
+                break;
+            case "Enemy":
+                finishedController.resultText.text = "GAME OVER!";
+                break;
+        }
+
         finishedController.Display();
         Debug.Log("Game finished");
     }
