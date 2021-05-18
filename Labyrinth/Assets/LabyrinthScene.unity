@@ -2439,12 +2439,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.3000183, y: -80.4}
   m_SizeDelta: {x: -62.886963, y: -145.93765}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1272125739 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9078506965156209469, guid: 8861a8a1fd498044ca9787f31dff4538,
-    type: 3}
-  m_PrefabInstance: {fileID: 165301840}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1315294875 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1953071392357310925, guid: f599499e46b50f14d8d3556d9af2a127,
@@ -3392,7 +3386,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cell: {fileID: 1953071392357310921, guid: f599499e46b50f14d8d3556d9af2a127, type: 3}
   enemy: {fileID: 4417830355860364213, guid: b39b6f99ec2c4f942aa167debeda61da, type: 3}
-  player: {fileID: 1272125739}
   cellFloor: {fileID: 2351945735342302445, guid: 49bf9c7a2e7449249be955775b2417eb,
     type: 3}
   cellCeiling: {fileID: 4582956630713449816, guid: 610440e9e25be2c4089e1bd317535668,
@@ -3400,7 +3393,7 @@ MonoBehaviour:
   cup: {fileID: 7021819050958281906, guid: 5a3bbcb8576c4144d8d7fff12efe6f7b, type: 3}
   mazeRows: 15
   mazeCols: 15
-  initializeCeiling: 1
+  initializeCeiling: 0
 --- !u!4 &1829671767
 Transform:
   m_ObjectHideFlags: 0

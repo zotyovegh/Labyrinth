@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 public class PrimsAlgorithm : MazeAlgorithm
 {
@@ -10,11 +8,11 @@ public class PrimsAlgorithm : MazeAlgorithm
     private static System.Random rand = new System.Random();
     public override MazeCell CreateLabyrinth(GameObject enemy, float gridSpacingOffset, int safeDistance, int enemyAmount)
     {
-        List<MazeCell[]> wallPairs = new List<MazeCell[]>();
-        getNeighboringWalls(cells[1, 1], cells, wallPairs);
+        var wallPairs = new List<MazeCell[]>();
+        GetNeighboringWalls(cells[1, 1], wallPairs);
         while (wallPairs.Count > 0)
         {
-            MazeCell[] currentPair = takeRandomPair(wallPairs);
+            var currentPair = TakeRandomPair(wallPairs);
             if (!currentPair[1].isWall)
             {
                 continue;
@@ -26,17 +24,14 @@ public class PrimsAlgorithm : MazeAlgorithm
 
             currentPair[1].prev = currentPair[0];
 
-            getNeighboringWalls(currentPair[1], cells, wallPairs);
+            GetNeighboringWalls(currentPair[1], wallPairs);
         }
         cells[1, 1].isStart = true;
-        List<MazeCell> path = UpdateLabyrinth(cells, cells[1, 1]);
-        int safeZone = (int)(path[path.Count - 1].position * 0.2);
+        var path = UpdateLabyrinth(cells, cells[1, 1]);
+        var finishCell = GetFinishCell(path, safeDistance);
+        var newList = Shuffle(path.Where(x => (x.position > safeDistance && !x.isWall && x.position != finishCell.position)).ToList()).Take(enemyAmount).ToList();
 
-        MazeCell finishCell = GetFinishCell(path, safeDistance);        
-        
-        List <MazeCell> newList = Shuffle(path.Where(x => (x.position > safeDistance && !x.isWall && x.position != finishCell.position)).ToList()).Take(enemyAmount).ToList();
-
-        for (int i = 0; i < newList.Count-1; i++)
+        for (var i = 0; i < newList.Count-1; i++)
         {
             Vector3 newEnemyPosition = new Vector3(newList[i].cellRow * gridSpacingOffset * 2, 1, newList[i].cellCol * gridSpacingOffset * 2) + Vector3.zero;
             newList[i].body = GameObject.Instantiate(enemy, newEnemyPosition, Quaternion.Euler(0, rand.Next(360), 0));
@@ -44,59 +39,59 @@ public class PrimsAlgorithm : MazeAlgorithm
         return finishCell;
     }
 
-    private MazeCell GetFinishCell(List<MazeCell> path, int safeDistance)
+    private MazeCell GetFinishCell(IEnumerable<MazeCell> path, int safeDistance)
     {       
-        MazeCell finishCell = path.Where(x => (x.position > safeDistance && !x.isWall)).LastOrDefault();
+        MazeCell finishCell = path.LastOrDefault(x => (x.position > safeDistance && !x.isWall));
 
-        if(finishCell.cellRow != finishCell.prev.cellRow)
+        if(finishCell != null && finishCell.cellRow != finishCell.prev.cellRow)
         {
             finishCell.shouldRotate = true;
         }
         return finishCell;
     }
 
-    void getNeighboringWalls(MazeCell cell, MazeCell[,]cells, List<MazeCell[]> wallPairs)
+    private void GetNeighboringWalls(MazeCell cell, ICollection<MazeCell[]> wallPairs)
     {
-        int row = cell.cellRow;
-        int col = cell.cellCol;
+        var row = cell.cellRow;
+        var col = cell.cellCol;
         if (row > 1)
         {
             //UP
-            MazeCell neighbor = cells[row - 1, col];
+            var neighbor = cells[row - 1, col];
             wallPairs.Add(new MazeCell[] { neighbor, cells[row - 2, col] });
         }
         if (col < cells.GetLength(1) - 2)
         {
             //Right
-            MazeCell neighbor = cells[row, col + 1];
+            var neighbor = cells[row, col + 1];
             wallPairs.Add(new MazeCell[] { neighbor, cells[row, col+2] });
         }
         if (row < cells.GetLength(0) - 2)
         {
             //Down
-            MazeCell neighbor = cells[row + 1, col];
+            var neighbor = cells[row + 1, col];
             wallPairs.Add(new MazeCell[] { neighbor, cells[row + 2, col] });
         }
         if (col > 1)
         {
             //Left
-            MazeCell neighbor = cells[row, col - 1];
+            var neighbor = cells[row, col - 1];
             wallPairs.Add(new MazeCell[] { neighbor, cells[row, col-2] });
         }
     }
 
-    MazeCell[] takeRandomPair(List<MazeCell[]> wallPairs)
+    private static MazeCell[] TakeRandomPair(IList<MazeCell[]> wallPairs)
     {
-        int position = UnityEngine.Random.Range(0, wallPairs.Count);
-        MazeCell[] pair = wallPairs[position];
+        var position = UnityEngine.Random.Range(0, wallPairs.Count);
+        var pair = wallPairs[position];
         wallPairs.RemoveAt(position);
         return pair;
     }
 
     public override List<MazeCell> UpdateLabyrinth(MazeCell[,] grid, MazeCell startCell)
     {
-        List<MazeCell> mainList = new List<MazeCell>();
-        List<MazeCell> visitedCells = new List<MazeCell>();
+        var mainList = new List<MazeCell>();
+        var visitedCells = new List<MazeCell>();
 
         startCell.visited = true;
         startCell.position = 1;
@@ -105,25 +100,25 @@ public class PrimsAlgorithm : MazeAlgorithm
 
         while (mainList.Count > 0)
         {
-            MazeCell currentCell = mainList.First();
+            var currentCell = mainList.First();
             mainList = mainList.Skip(1).ToList();
             visitedCells.Add(currentCell);
 
             if (currentCell.isWall && !currentCell.isStart) continue;
-            var neighbors = getUnvisitedNeighbors(currentCell, grid);
-            for (int i = 0; i < neighbors.Count; i++)
+            var neighbors = GetUnvisitedNeighbors(currentCell, grid);
+            foreach (var cell in neighbors)
             {
-                neighbors[i].visited = true;
-                neighbors[i].position = currentCell.position + 1;
-                mainList.Add(neighbors[i]);
+                cell.visited = true;
+                cell.position = currentCell.position + 1;
+                mainList.Add(cell);
             }
         }
         return visitedCells;
     }
 
-    List<MazeCell> getUnvisitedNeighbors(MazeCell cell, MazeCell[,] grid)
+    IEnumerable<MazeCell> GetUnvisitedNeighbors(MazeCell cell, MazeCell[,] grid)
     {
-        List<MazeCell> neighbors = new List<MazeCell>();
+        var neighbors = new List<MazeCell>();
         Up(cell.cellRow, cell.cellCol, grid, neighbors);
         Right(cell.cellRow, cell.cellCol, grid, neighbors);
         Down(cell.cellRow, cell.cellCol, grid, neighbors);
@@ -131,63 +126,55 @@ public class PrimsAlgorithm : MazeAlgorithm
         return neighbors;
     }
 
-    void Up(int row, int col, MazeCell[,] grid, List<MazeCell> neighbors)
+    private static void Up(int row, int col, MazeCell[,] grid, ICollection<MazeCell> neighbors)
     {
-        if (row > 0)
+        if (row <= 0) return;
+        var cell = grid[row - 1, col];
+        if (!cell.visited)
         {
-            MazeCell cell = grid[row - 1, col];
-            if (!cell.visited)
-            {
-                neighbors.Add(cell);
-            }
+            neighbors.Add(cell);
         }
     }
 
-    void Right(int row, int col, MazeCell[,] grid, List<MazeCell> neighbors)
+    private static void Right(int row, int col, MazeCell[,] grid, ICollection<MazeCell> neighbors)
     {
-        if (col < grid.GetLength(1) - 1)
+        if (col >= grid.GetLength(1) - 1) return;
+        var cell = grid[row, col + 1];
+        if (!cell.visited)
         {
-            MazeCell cell = grid[row, col + 1];
-            if (!cell.visited)
-            {
-                neighbors.Add(cell);
-            }
+            neighbors.Add(cell);
         }
     }
 
-    void Down(int row, int col, MazeCell[,] grid, List<MazeCell> neighbors)
+    private static void Down(int row, int col, MazeCell[,] grid, ICollection<MazeCell> neighbors)
     {
-        if (row < grid.GetLength(0) - 1)
+        if (row >= grid.GetLength(0) - 1) return;
+        var cell = grid[row + 1, col];
+        if (!cell.visited)
         {
-            MazeCell cell = grid[row + 1, col];
-            if (!cell.visited)
-            {
-                neighbors.Add(cell);
-            }
+            neighbors.Add(cell);
         }
     }
 
-    void Left(int row, int col, MazeCell[,] grid, List<MazeCell> neighbors)
+    private static void Left(int row, int col, MazeCell[,] grid, ICollection<MazeCell> neighbors)
     {
-        if (col > 0)
+        if (col <= 0) return;
+        var cell = grid[row, col - 1];
+        if (!cell.visited)
         {
-            MazeCell cell = grid[row, col - 1];
-            if (!cell.visited)
-            {
-                neighbors.Add(cell);
-            }
+            neighbors.Add(cell);
         }
     }
 
     public static List<T> Shuffle<T>(List<T> list)
     {
         var rng = new System.Random();
-        int n = list.Count;
+        var n = list.Count;
         while (n > 1)
         {
             n--;
-            int k = rng.Next(n + 1);
-            T value = list[k];
+            var k = rng.Next(n + 1);
+            var value = list[k];
             list[k] = list[n];
             list[n] = value;
         }
