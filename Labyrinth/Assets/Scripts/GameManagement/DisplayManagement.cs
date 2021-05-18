@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class DisplayManagement : MonoBehaviour
 {
-    // Start is called before the first frame update
     [SerializeField]
     public TextMeshProUGUI torchAmount;
     [SerializeField]
@@ -33,8 +32,7 @@ public class DisplayManagement : MonoBehaviour
     {
         UpdateUI();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         UpdateUI();
@@ -83,6 +81,4 @@ public class DisplayManagement : MonoBehaviour
         gunBg1.color = c;
         gunBg2.color = c;
     }
-
-   
 }

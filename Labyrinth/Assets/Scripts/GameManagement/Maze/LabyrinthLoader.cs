@@ -22,8 +22,7 @@ public class LabyrinthLoader : MonoBehaviour
 
     private int _safeDistance, _enemyAmount;
     private float gridSpacingOffset = 1f;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         InitializeDefaultData();

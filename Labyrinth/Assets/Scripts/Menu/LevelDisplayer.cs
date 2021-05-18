@@ -11,8 +11,7 @@ public class LevelDisplayer : MonoBehaviour
 
     private float _fadeTime;
     private bool _fadingIn;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         displayer.CrossFadeAlpha(0, 0.0f, false);
@@ -23,8 +22,7 @@ public class LevelDisplayer : MonoBehaviour
            displayer.text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(GameSetup.gameType.ToLower());
         } 
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (_fadingIn) FadeIn();

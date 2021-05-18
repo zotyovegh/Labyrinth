@@ -17,5 +17,4 @@ public abstract class MazeAlgorithm
     public abstract MazeCell CreateLabyrinth(GameObject enemy, float gridSpacingOffset, int safeDistance, int enemyAmount);
 
     public abstract List<MazeCell> UpdateLabyrinth(MazeCell[,] grid, MazeCell startCell);
-
 }

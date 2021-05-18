@@ -46,7 +46,6 @@ public class GameController : MonoBehaviour
                         OnGameFinished(other.gameObject.tag);
                         break;
                 }
-
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
             else
@@ -71,8 +70,6 @@ public class GameController : MonoBehaviour
                 finishedController.resultText.text = "GAME OVER!";
                 break;
         }
-
         finishedController.Display();
-        Debug.Log("Game finished");
     }
 }

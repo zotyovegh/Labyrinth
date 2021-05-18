@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-    public class CustomSetup
-    {
+public class CustomSetup
+{
     public int size, safeDistance, enemyAmount, torchAmount, bulletAmount, hammerLife;
 
     public CustomSetup( int size, int safeDistance, int enemyAmount, int torchAmount, int bulletAmount, int hammerLife)
@@ -27,5 +27,4 @@ using System.Threading.Tasks;
         GameSetup.bulletAmount = bulletAmount;
         GameSetup.hammerLife = hammerLife;
     }
-
 }

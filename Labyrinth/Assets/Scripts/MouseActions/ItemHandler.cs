@@ -7,8 +7,7 @@ public class ItemHandler : MonoBehaviour
 {
     [SerializeField]
     public int selectedItem = 0;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         Change();
@@ -16,7 +15,7 @@ public class ItemHandler : MonoBehaviour
 
     private void Change()
     {
-        int i = 0;
+        var i = 0;
         foreach(Transform item in transform)
         {
             if (i == selectedItem)
@@ -28,11 +27,10 @@ public class ItemHandler : MonoBehaviour
             i++;
         }
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        int previous = selectedItem;
+        var previous = selectedItem;
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {

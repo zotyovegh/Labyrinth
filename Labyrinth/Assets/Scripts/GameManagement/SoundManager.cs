@@ -5,8 +5,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static AudioClip collapse, die, placeTorch, destroyTorch, shoot;
-    static AudioSource audioSource;
-
+    static AudioSource _audioSource;
 
     void Start()
     {
@@ -16,7 +15,7 @@ public class SoundManager : MonoBehaviour
         destroyTorch = Resources.Load<AudioClip>("destroyTorch");
         shoot = Resources.Load<AudioClip>("shoot");
 
-        audioSource = GetComponent<AudioSource>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     public static void PlaySound(string name)
@@ -24,25 +23,24 @@ public class SoundManager : MonoBehaviour
         switch (name)
         {
             case "collapse":                
-                audioSource.PlayOneShot(collapse);
+                _audioSource.PlayOneShot(collapse);
                 break;
 
             case "die":
-                audioSource.PlayOneShot(die);
+                _audioSource.PlayOneShot(die);
                 break;
 
             case "placeTorch":
-                audioSource.PlayOneShot(placeTorch);
+                _audioSource.PlayOneShot(placeTorch);
                 break;
 
             case "destroyTorch":
-                audioSource.PlayOneShot(destroyTorch);
+                _audioSource.PlayOneShot(destroyTorch);
                 break;
 
             case "shoot":
-                audioSource.PlayOneShot(shoot);
+                _audioSource.PlayOneShot(shoot);
                 break;
         }
     }
-   
 }

@@ -25,7 +25,6 @@ public class PlacementController : MonoBehaviour
 
     private void DetectAndAct()
     {
-        
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitInfo;
 
@@ -65,8 +64,7 @@ public class PlacementController : MonoBehaviour
                 case "west":
                     wallScript.torchWest = v;
                     break;
-            }        
-
+            }
         //anim
         animator.SetTrigger("isPlacing");
     }

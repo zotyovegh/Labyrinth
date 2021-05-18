@@ -68,7 +68,6 @@ public class HammerController : MonoBehaviour
         if (GameSetup.hammerLife == 0) {
             Destroy(gameObject);                    
         }
-
     }
 
     private static void DestroyTorchOnWall(GameObject torch, WallScript wallScript)
@@ -80,7 +79,6 @@ public class HammerController : MonoBehaviour
 
     private void ReleaseIfClicked()
     {
-
         if (Input.GetMouseButtonDown(0))
         {
             clickType = 0;

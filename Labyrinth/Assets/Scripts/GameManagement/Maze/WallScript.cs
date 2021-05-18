@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class WallScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     public bool isMapEdgeElement = false;
 
     public bool torchNorth = false;
@@ -28,8 +26,7 @@ public class WallScript : MonoBehaviour
     {
         torchInHand = GameObject.Find("TorchInHand");
     }
-
-    // Update is called once per frame
+    
     void Update()
     {        
         if (torchSouth && objectSouth == null)

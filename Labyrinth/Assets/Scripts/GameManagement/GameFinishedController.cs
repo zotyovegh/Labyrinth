@@ -25,11 +25,24 @@ public class GameFinishedController : MonoBehaviour
         else if (GameSetup.gameType == null) Debug.Log("Testing");
         else
         {
-            if (GameSetup.gameType.Equals("easy")) GameSetups.SetEasy();
-            if (GameSetup.gameType.Equals("medium")) GameSetups.SetMedium();
-            if (GameSetup.gameType.Equals("hard")) GameSetups.SetHard();
-            if (GameSetup.gameType.Equals("extreme")) GameSetups.SetExtreme();
-            if (GameSetup.gameType.Equals("custom")) GameSetups.savedCustomSetup.InstallSavedCustom();
+            switch (GameSetup.gameType)
+            {
+                case "easy":
+                    GameSetups.SetEasy();
+                    break;
+                case "medium":
+                    GameSetups.SetMedium();
+                    break;
+                case "hard":
+                    GameSetups.SetHard();
+                    break;
+                case "extreme":
+                    GameSetups.SetExtreme();
+                    break;
+                case "custom":
+                    GameSetups.savedCustomSetup.InstallSavedCustom();
+                    break;
+            }
         }
 
         GameSetup.isFinished = false;

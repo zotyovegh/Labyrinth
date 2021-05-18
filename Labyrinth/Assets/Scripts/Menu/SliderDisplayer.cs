@@ -6,15 +6,14 @@ using UnityEngine.UI;
 public class SliderDisplayer : MonoBehaviour
 {
     [SerializeField]
-    TMPro.TextMeshProUGUI _textToUpdate;
+    public TMPro.TextMeshProUGUI textToUpdate;
     [SerializeField]
     public Slider slider;
     public int infiniteValue;
-    // Start is called before the first frame update
 
     void Start()
     {
-        _textToUpdate = GetComponent<TMPro.TextMeshProUGUI>(); 
+        textToUpdate = GetComponent<TMPro.TextMeshProUGUI>(); 
         slider.onValueChanged.AddListener(delegate { OnValueChanged(); });
     }
 
@@ -24,17 +23,16 @@ public class SliderDisplayer : MonoBehaviour
         {
             if(slider.value == infiniteValue)
             {
-                _textToUpdate.text = "∞";
+                textToUpdate.text = "∞";
             }
             else
             {
-                _textToUpdate.text = slider.value + "";
+                textToUpdate.text = slider.value + "";
             }
         }
         else
         {
-            _textToUpdate.text = slider.value + "";
+            textToUpdate.text = slider.value + "";
         }
-       
     }
 }

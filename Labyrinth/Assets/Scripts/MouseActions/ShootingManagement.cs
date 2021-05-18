@@ -44,7 +44,6 @@ public class ShootingManagement : MonoBehaviour
             }
             if(GameSetup.bulletAmount > 0)GameSetup.bulletAmount--;
             if(GameSetup.bulletAmount == 0) Destroy(gameObject.transform.parent.gameObject);
-                
         }
     }
 }
