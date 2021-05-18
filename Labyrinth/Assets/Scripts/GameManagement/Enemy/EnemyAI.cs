@@ -38,7 +38,7 @@ public class EnemyAI : MonoBehaviour
             _laserScript.timeOff = false;
             _mob.ResetPath();
         }
-        if (!_laserScript.Enemyfound)
+        if (!_laserScript.enemyfound)
         {
             transform.Rotate(new Vector3(0, _rotate ? -40 : 40, 0) * Time.deltaTime);  
         }
@@ -52,7 +52,7 @@ public class EnemyAI : MonoBehaviour
     }
     public void ReceiveBullet(float bulletStrength)
     {
-        _laserScript.Enemyfound = true;
+        _laserScript.enemyfound = true;
         currentHealth -= bulletStrength;
         if (currentHealth <= 0f)
         {

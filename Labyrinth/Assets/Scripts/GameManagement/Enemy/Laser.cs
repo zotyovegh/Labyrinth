@@ -1,14 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Laser : MonoBehaviour
 {    
     [SerializeField]
-    public GameObject Nose;
+    public GameObject nose;
 
-    private LineRenderer lr;
-    public bool Enemyfound = false;
+    private LineRenderer _lr;
+    public bool enemyfound = false;
     public float timeValue;
     public float timeDefault;
     public bool timeOff = false;
@@ -16,7 +14,7 @@ public class Laser : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lr = GetComponent<LineRenderer>();
+        _lr = GetComponent<LineRenderer>();
         timeValue = timeDefault;
     }
 
@@ -24,29 +22,29 @@ public class Laser : MonoBehaviour
     void Update()
     {
         
-        lr.SetPosition(0, Nose.transform.position);
+        _lr.SetPosition(0, nose.transform.position);
         RaycastHit hit;
 
-        if (Physics.Raycast(Nose.transform.position, Nose.transform.forward, out hit))
+        if (Physics.Raycast(nose.transform.position, nose.transform.forward, out hit))
         {
             if (hit.collider)
             {
                 if(hit.collider.tag == "Player")
                 {
-                    Enemyfound = true;
+                    enemyfound = true;
                     timeValue = timeDefault;
                 }
                 
-                lr.SetPosition(1, hit.point);
+                _lr.SetPosition(1, hit.point);
             }
         }
-        else lr.SetPosition(1, Nose.transform.forward*50000);
+        else _lr.SetPosition(1, nose.transform.forward*50000);
         Timer();
     }
 
     void Timer()
     {
-        if(timeValue  > 0 && Enemyfound && !timeOff)
+        if(timeValue  > 0 && enemyfound && !timeOff)
         {
             timeValue -= Time.deltaTime;
         }
@@ -57,7 +55,7 @@ public class Laser : MonoBehaviour
                timeOff = true;
             }
             timeValue = timeDefault;
-            Enemyfound = false;
+            enemyfound = false;
             
             
         }
