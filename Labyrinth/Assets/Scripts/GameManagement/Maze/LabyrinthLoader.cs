@@ -98,6 +98,7 @@ public class LabyrinthLoader : MonoBehaviour
                 {
                     var wallScript = cells[r, c].body.GetComponent<WallScript>();
                     wallScript.isMapEdgeElement = true;
+                    if (r == 1 && c == 0) wallScript.torchNorth = true;
                 }
             }
         }
