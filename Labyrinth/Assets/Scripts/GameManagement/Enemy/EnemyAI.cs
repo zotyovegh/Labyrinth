@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
@@ -8,55 +6,53 @@ public class EnemyAI : MonoBehaviour
     [SerializeField]
     public float currentHealth = 80f;
     [SerializeField]
-    public GameObject Laser;
+    public GameObject laser;
     [SerializeField]
-    public float MobDistanceRun = 4.0f;    
+    public float mobDistanceRun = 4.0f;    
     [SerializeField]
     public ParticleSystem dyingEffect;
 
-    private System.Random rng = new System.Random();
-    private bool rotate;
-    private Laser LaserScript;
-    private GameObject Player;
-    private NavMeshAgent Mob;
-    private AudioSource DetectionSound;
-
-    // Start is called before the first frame update
+    private readonly System.Random _rng = new System.Random();
+    private bool _rotate;
+    private Laser _laserScript;
+    private GameObject _player;
+    private NavMeshAgent _mob;
+    private AudioSource _detectionSound;
+    
     void Start()
     {
-        Mob = GetComponent<NavMeshAgent>();
-        LaserScript = Laser.GetComponent<Laser>();
-        Player = GameObject.Find("Player");
-        DetectionSound = GetComponent<AudioSource>();
+        _mob = GetComponent<NavMeshAgent>();
+        _laserScript = laser.GetComponent<Laser>();
+        _player = GameObject.Find("Player");
+        _detectionSound = GetComponent<AudioSource>();
 
-        rotate = rng.Next(0, 2) > 0;
+        _rotate = _rng.Next(0, 2) > 0;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        if (LaserScript.timeOff)
+        if (_laserScript.timeOff)
         {
-            DetectionSound.enabled = false;
-            Mob.isStopped = true;
-            LaserScript.timeOff = false;
-            Mob.ResetPath();
+            _detectionSound.enabled = false;
+            _mob.isStopped = true;
+            _laserScript.timeOff = false;
+            _mob.ResetPath();
         }
-        if (!LaserScript.Enemyfound)
+        if (!_laserScript.Enemyfound)
         {
-            transform.Rotate(new Vector3(0, rotate ? -40 : 40, 0) * Time.deltaTime);  
+            transform.Rotate(new Vector3(0, _rotate ? -40 : 40, 0) * Time.deltaTime);  
         }
         else
         {
-            DetectionSound.enabled = true;
-            Vector3 dirToPlayer = transform.position - Player.transform.position;
+            _detectionSound.enabled = true;
+            Vector3 dirToPlayer = transform.position - _player.transform.position;
             Vector3 newPos = transform.position - dirToPlayer;
-            Mob.SetDestination(newPos);         
+            _mob.SetDestination(newPos);         
         }
     }
     public void ReceiveBullet(float bulletStrength)
     {
-        LaserScript.Enemyfound = true;
+        _laserScript.Enemyfound = true;
         currentHealth -= bulletStrength;
         if (currentHealth <= 0f)
         {

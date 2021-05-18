@@ -622,8 +622,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 80
-  Laser: {fileID: 4417830356379350868}
-  MobDistanceRun: 10000
+  laser: {fileID: 4417830356379350868}
+  mobDistanceRun: 4
   dyingEffect: {fileID: 6091152772047115825, guid: ce877a97240214c4ebcae815cd308341,
     type: 3}
 --- !u!1 &4417830356379350868
