@@ -53,7 +53,7 @@ public class GameSetups
     public static void SetCustom(string size, string safeDistance, string enemyAmount, string torchAmount, string bulletAmount, string hammerLife)
     {
         GameSetup.gameType = "custom";
-        int sizeValue = int.Parse(size);
+        var sizeValue = int.Parse(size);
         GameSetup.size = sizeValue % 2 != 0 ? sizeValue : sizeValue + 1;
         GameSetup.safeDistance = int.Parse(safeDistance);
         GameSetup.enemyAmount = int.Parse(enemyAmount);

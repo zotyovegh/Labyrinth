@@ -267,10 +267,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0283983f8af7dd846884c260aaf73f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textToUpdate: {fileID: 0}
+  _textToUpdate: {fileID: 0}
   slider: {fileID: 1757174945}
   infiniteValue: 0
-  value: 0
 --- !u!1 &51235843
 GameObject:
   m_ObjectHideFlags: 0
@@ -3873,10 +3872,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0283983f8af7dd846884c260aaf73f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textToUpdate: {fileID: 0}
+  _textToUpdate: {fileID: 0}
   slider: {fileID: 1424036029}
   infiniteValue: 300
-  value: 0
 --- !u!114 &990925877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4095,10 +4093,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0283983f8af7dd846884c260aaf73f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textToUpdate: {fileID: 0}
+  _textToUpdate: {fileID: 0}
   slider: {fileID: 982706834}
   infiniteValue: 0
-  value: 0
 --- !u!114 &1063961764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5051,10 +5048,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0283983f8af7dd846884c260aaf73f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textToUpdate: {fileID: 0}
+  _textToUpdate: {fileID: 0}
   slider: {fileID: 1930530804}
   infiniteValue: 1000
-  value: 0
 --- !u!114 &1290397320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5866,10 +5862,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0283983f8af7dd846884c260aaf73f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textToUpdate: {fileID: 0}
+  _textToUpdate: {fileID: 0}
   slider: {fileID: 1423723472}
   infiniteValue: 0
-  value: 0
 --- !u!114 &1494134090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6501,10 +6496,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0283983f8af7dd846884c260aaf73f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textToUpdate: {fileID: 0}
+  _textToUpdate: {fileID: 0}
   slider: {fileID: 1806629034}
   infiniteValue: 0
-  value: 0
 --- !u!114 &1719589735
 MonoBehaviour:
   m_ObjectHideFlags: 0

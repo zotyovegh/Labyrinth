@@ -26,8 +26,8 @@ public class DisplayManagement : MonoBehaviour
     [SerializeField]
     public Image gunBg2;
 
-    private Color defColor = new Color(255, 255, 255, 0.05f);
-    private Color pickedColor = new Color(255, 255, 0, 0.15f);
+    private readonly Color _defColor = new Color(255, 255, 255, 0.05f);
+    private readonly Color _pickedColor = new Color(255, 255, 0, 0.15f);
 
     void Start()
     {
@@ -48,21 +48,21 @@ public class DisplayManagement : MonoBehaviour
 
         if (GameSetup.itemInHand.Equals("TorchHandler"))
         {
-            ChangeTorchBg(pickedColor);
-            ChangeHammerBg(defColor);
-            ChangeGunBg(defColor);
+            ChangeTorchBg(_pickedColor);
+            ChangeHammerBg(_defColor);
+            ChangeGunBg(_defColor);
         }
         else if (GameSetup.itemInHand.Equals("Gun"))
         {
-            ChangeTorchBg(defColor);
-            ChangeHammerBg(defColor);
-            ChangeGunBg(pickedColor);
+            ChangeTorchBg(_defColor);
+            ChangeHammerBg(_defColor);
+            ChangeGunBg(_pickedColor);
         }
         else if (GameSetup.itemInHand.Equals("Hammer"))
         {
-            ChangeTorchBg(defColor);
-            ChangeHammerBg(pickedColor);
-            ChangeGunBg(defColor);
+            ChangeTorchBg(_defColor);
+            ChangeHammerBg(_pickedColor);
+            ChangeGunBg(_defColor);
         }
     }
 
