@@ -49,31 +49,29 @@ public class HammerController : MonoBehaviour
     }
 
     private void DestroyWall(GameObject wall)
-    {        
-        if(GameSetup.hammerLife > 0)
-        {
-            WallScript wallScript = wall.GetComponent<WallScript>();
-            if (wallScript.isMapEdgeElement) return;
-            if (wallScript.objectNorth) DestroyTorchOnWall(wallScript.objectNorth, wallScript);  
-            if (wallScript.objectEast) DestroyTorchOnWall(wallScript.objectEast, wallScript);
-            if (wallScript.objectSouth) DestroyTorchOnWall(wallScript.objectSouth, wallScript);
-            if (wallScript.objectWest) DestroyTorchOnWall(wallScript.objectWest, wallScript);
+    {
+        if (GameSetup.hammerLife <= 0) return;
+        var wallScript = wall.GetComponent<WallScript>();
+        if (wallScript.isMapEdgeElement) return;
+        if (wallScript.objectNorth) DestroyTorchOnWall(wallScript.objectNorth, wallScript);  
+        if (wallScript.objectEast) DestroyTorchOnWall(wallScript.objectEast, wallScript);
+        if (wallScript.objectSouth) DestroyTorchOnWall(wallScript.objectSouth, wallScript);
+        if (wallScript.objectWest) DestroyTorchOnWall(wallScript.objectWest, wallScript);
 
-            wallScript.DestroyWall();
-            //sound
-            SoundManager.PlaySound("collapse");
-            //anim
-            animator.SetTrigger("isSwinging");
+        wallScript.DestroyWall();
+        //sound
+        SoundManager.PlaySound("collapse");
+        //anim
+        animator.SetTrigger("isSwinging");
 
-            GameSetup.hammerLife--;
-            if (GameSetup.hammerLife == 0) {
-                Destroy(gameObject);                    
-            }
+        GameSetup.hammerLife--;
+        if (GameSetup.hammerLife == 0) {
+            Destroy(gameObject);                    
         }
-        
+
     }
 
-    private void DestroyTorchOnWall(GameObject torch, WallScript wallScript)
+    private static void DestroyTorchOnWall(GameObject torch, WallScript wallScript)
     {
         Destroy(torch);
         GameSetup.torchAmount++;

@@ -21,35 +21,30 @@ public class ShootingManagement : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && !GameSetup.isFinished)
+        if (!Input.GetMouseButtonDown(0) || GameSetup.isFinished) return;
+        flash.Play();
+        RaycastHit hit;
+        if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
         {
-            flash.Play();
-            RaycastHit hit;
-            if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
+            var target = hit.transform.root.GetComponent<EnemyAI>();
+            //sound
+            SoundManager.PlaySound("shoot");
+            //anim
+            animator.SetTrigger("isShooting");
+            if (target != null)
             {
-                EnemyAI target = hit.transform.root.GetComponent<EnemyAI>();
-                //sound
-                SoundManager.PlaySound("shoot");
-                //anim
-                animator.SetTrigger("isShooting");
-                if (target != null)
-                {
-                    target.ReceiveBullet(bulletStrength);
-                    GameObject obj = Instantiate(bleedingEffect, hit.point, Quaternion.LookRotation(hit.normal));
-                    Destroy(obj, 2f);
-                }
-                else
-                {
-                    GameObject obj = Instantiate(smokeEffect, hit.point, Quaternion.LookRotation(hit.normal));
-                    Destroy(obj, 2f);
-                }
-                if(GameSetup.bulletAmount > 0)GameSetup.bulletAmount--;
-                if(GameSetup.bulletAmount == 0)
-                {
-                    Destroy(gameObject.transform.parent.gameObject);
-                }
-                
+                target.ReceiveBullet(bulletStrength);
+                GameObject obj = Instantiate(bleedingEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                Destroy(obj, 2f);
             }
+            else
+            {
+                GameObject obj = Instantiate(smokeEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                Destroy(obj, 2f);
+            }
+            if(GameSetup.bulletAmount > 0)GameSetup.bulletAmount--;
+            if(GameSetup.bulletAmount == 0) Destroy(gameObject.transform.parent.gameObject);
+                
         }
     }
 }
