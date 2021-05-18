@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField]
-    public float currentHealth = 100f;
+    public float currentHealth = 80f;
     [SerializeField]
     public GameObject Laser;
     [SerializeField]
