@@ -10,8 +10,6 @@ public class LabyrinthLoader : MonoBehaviour
     [SerializeField]
     public GameObject enemy;
     [SerializeField]
-    public GameObject player;
-    [SerializeField]
     public GameObject cellFloor;
     [SerializeField]
     public GameObject cellCeiling;
@@ -22,7 +20,7 @@ public class LabyrinthLoader : MonoBehaviour
     [SerializeField]
     public bool initializeCeiling;
 
-    private int safeDistance, enemyAmount;
+    private int _safeDistance, _enemyAmount;
     private float gridSpacingOffset = 1f;
 
     // Start is called before the first frame update
@@ -34,7 +32,7 @@ public class LabyrinthLoader : MonoBehaviour
         InitializeGrid(cells);
 
         MazeAlgorithm ma = new PrimsAlgorithm(cells);
-        MazeCell finalCell =  ma.CreateLabyrinth(enemy, gridSpacingOffset, safeDistance, enemyAmount);
+        MazeCell finalCell =  ma.CreateLabyrinth(enemy, gridSpacingOffset, _safeDistance, _enemyAmount);
 
         InitializeCup(finalCell);
     }
@@ -47,7 +45,7 @@ public class LabyrinthLoader : MonoBehaviour
             GameSetup.hammerLife = 100;
             GameSetup.bulletAmount = 100;
             GameSetup.size = mazeRows;
-            GameSetup.safeDistance = safeDistance;
+            GameSetup.safeDistance = _safeDistance;
         }
         if(GameSetup.size != 0)
         {
@@ -56,9 +54,9 @@ public class LabyrinthLoader : MonoBehaviour
         }         
         if (GameSetup.safeDistance != 0)
         {
-            safeDistance = GameSetup.safeDistance;
+            _safeDistance = GameSetup.safeDistance;
         }
-        enemyAmount = GameSetup.enemyAmount;
+        _enemyAmount = GameSetup.enemyAmount;
     }
 
     private void InitializeCup(MazeCell finalCell)
@@ -84,11 +82,13 @@ public class LabyrinthLoader : MonoBehaviour
             {                
                 Vector3 cellPosition = new Vector3(r * gridSpacingOffset*2, 1, c * gridSpacingOffset*2) + Vector3.zero;
                 Vector3 floorPosition = new Vector3(r * gridSpacingOffset * 2, 0, c * gridSpacingOffset * 2) + Vector3.zero;
-                cells[r, c] = new MazeCell();
-                cells[r, c].cellRow = r;
-                cells[r, c].cellCol = c;
-                cells[r, c].body = Instantiate(cell, cellPosition, Quaternion.identity);                
-                cells[r, c].floor = Instantiate(cellFloor, floorPosition, Quaternion.identity);
+                cells[r, c] = new MazeCell
+                {
+                    cellRow = r,
+                    cellCol = c,
+                    body = Instantiate(cell, cellPosition, Quaternion.identity),
+                    floor = Instantiate(cellFloor, floorPosition, Quaternion.identity)
+                };
                 if (initializeCeiling)
                 {
                     Vector3 ceilingPosition = new Vector3(r * gridSpacingOffset * 2, 2, c * gridSpacingOffset * 2) + Vector3.zero;
