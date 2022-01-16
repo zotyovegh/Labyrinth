@@ -1,3 +1,5 @@
+#Labyrinth Game
+
 The Labyrinth game has been created for VIA University College' 6th Semester - Game Development
 course.
 
